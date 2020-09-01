@@ -17,7 +17,6 @@ export const Header = () => {
 
 const HeaderWrapper = styled.div`
 background-color:yellow;
-
 `;
 
 const WrapperLinks = styled.div`
