@@ -2,14 +2,14 @@ import React from 'react';
 
 
 const INITIAL_STATE = {
-  products: ''
+  modal: false
 }
 
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case "Car":
+    case "TOGGLE_MODAL":
       return {
-        name: "Bob - car"
+        modal: !state.modal
       };
     case "Bike":
       return {

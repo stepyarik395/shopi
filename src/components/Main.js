@@ -1,14 +1,20 @@
 import React from 'react';
 import styled from 'styled-components'
 import { Card } from "./Card";
+import { Modal } from "./Modal";
+import { useSelector } from "react-redux";
+
 
 
 export const Main = (props) => {
+  const counter = useSelector(state => state);
   return (
     <WrapperMain>
-      {props.products.map((products) => {
-        return <li key={products._id}>
-          <Card
+      {counter.modal ? <Modal /> : false}
+      <FlexContainer>
+        {props.products.map((products) => {
+          return <Card
+            key={products._id}
             title={products.title}
             price={products.price}
             size={products.avalibaleSizes}
@@ -16,13 +22,17 @@ export const Main = (props) => {
             description={products.description}
           >
           </Card>
-        </li>
-      })}
+
+        })}
+      </FlexContainer>
     </WrapperMain>
   )
 }
 
 const WrapperMain = styled.div`
-display:flex;
 height:92vh;
+`;
+const FlexContainer = styled.div`
+display:flex;
+justify-content:space-between;
 `;
