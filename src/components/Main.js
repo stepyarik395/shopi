@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { Modal } from "./Modal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -26,9 +26,9 @@ export const Main = (props) => {
             }}>
               <img src={product.image} />
             </a>
-            <h2>{product.title}</h2>
-            <p>{product.description}</p>
-            <span>{product.price}</span>
+            <TitleCard>{product.title}</TitleCard>
+            <DescText>{product.description}</DescText>
+            <Price>{product.price}</Price>
             <button onClick={() => {
             }}>add to card</button>
           </WrapperArr>
@@ -43,10 +43,28 @@ const WrapperMain = styled.div`
 height:92vh;
 `;
 const FlexContainer = styled.div`
+padding-top:2rem;
 display:flex;
 justify-content:space-between;
 `;
 
 const WrapperArr = styled.div`
+display:flex;
+flex-direction:column;
+align-items:center;
 border:1px solid lightcoral;
+`;
+const TitleCard = styled.h2`
+text-transform:uppercase;
+text-align:center;
+padding-top:1.2rem;
+`;
+const Price = styled.span`
+text-align:center;
+display: block;
+font-weight:bold;
+font-size:2rem;
+`;
+const DescText = styled.p`
+font-size:2rem;
 `;
