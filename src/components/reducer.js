@@ -1,8 +1,8 @@
 import React from 'react';
-import data from '../data.json'
+
 
 const INITIAL_STATE = {
-  products: data.products
+  products: ''
 }
 
 function reducer(state = INITIAL_STATE, action) {

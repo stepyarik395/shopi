@@ -2,7 +2,7 @@
   "products": [
     {
       "_id": "dress1",
-      "image": "/images/dress1.jpg",
+      "image": "/img/dress1.jpg",
       "title": "Dress1",
       "description": "about dress 1",
       "avalibaleSizes": [
@@ -14,7 +14,7 @@
     },
     {
       "_id": "dress2",
-      "image": "/images/dress2.jpg",
+      "image": "/img/dress2.jpg",
       "title": "Dress2",
       "description": "about dress 2",
       "avalibaleSizes": [
@@ -25,7 +25,7 @@
     },
     {
       "_id": "dress3",
-      "image": "/images/dress3.jpg",
+      "image": "/img/dress3.jpg",
       "title": "Dress3",
       "description": "about dress 3",
       "avalibaleSizes": [
@@ -36,7 +36,7 @@
     },
     {
       "_id": "dress4",
-      "image": "/images/dress4.jpg",
+      "image": "/img/dress4.jpg",
       "title": "Dress4",
       "description": "about dress 4",
       "avalibaleSizes": [
@@ -47,7 +47,7 @@
     },
     {
       "_id": "dress5",
-      "image": "/images/dress5.jpg",
+      "image": "/img/dress5.jpg",
       "title": "Dress5",
       "description": "about dress 5",
       "avalibaleSizes": [
@@ -58,9 +58,9 @@
     },
     {
       "_id": "dress6",
-      "image": "/images/dress6.jpg",
-      "title": "Dress5",
-      "description": "about dress 5",
+      "image": "/img/dress6.jpg",
+      "title": "Dress6",
+      "description": "about dress 6",
       "avalibaleSizes": [
         "XXL",
         "X"
