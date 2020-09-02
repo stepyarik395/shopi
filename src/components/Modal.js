@@ -3,18 +3,19 @@ import styled from 'styled-components'
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
-export const Modal = () => {
+export const Modal = (props) => {
   const counter = useSelector(state => state);
   const dispatch = useDispatch();
   return (
     <WrapperModal>
-
       <button onClick={() => {
         dispatch({
           type: "TOGGLE_MODAL"
         })
       }}>close</button>
-      <h1>Modal tile</h1>
+      <img src={props.currentprod.image} />
+      <h1>{props.currentprod.title}</h1>
+      <p>{props.currentprod.description}</p>
     </WrapperModal>
   )
 }
