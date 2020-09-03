@@ -28,7 +28,7 @@ export const Main = (props) => {
             </a>
             <TitleCard>{product.title}</TitleCard>
             <DescText>{product.description}</DescText>
-            <Price>{product.price}</Price>
+            <Price>{"$" + product.price}</Price>
             <button onClick={() => {
             }}>add to card</button>
           </WrapperArr>

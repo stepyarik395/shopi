@@ -21,11 +21,17 @@ export const Modal = (props) => {
         <TitleModal >{props.currentprod.title}</TitleModal >
         <DeckModal>{props.currentprod.description}</DeckModal>
         <ModalPrice>{props.currentprod.price}</ModalPrice>
-        <ListSizes>
-          {props.currentprod.avalibaleSizes.map((item) => {
-            return <li key={item}><input type="checkbox" />{item}</li>
-          })}
-        </ListSizes>
+        {props.currentprod.avalibaleSizes.map((item) => {
+          return (
+            <ListSizes key={item}>
+              <li>
+                < ChekBox type="checkbox" />
+                {item}
+              </li>
+            </ListSizes>
+          )
+        })}
+        <ButtonModal>Add to Card</ButtonModal>
       </WrapperRighWtBlock>
     </WrapperModal>
   )
@@ -74,8 +80,28 @@ font-size:2rem;
 font-weight:bold;
 `;
 const ListSizes = styled.ul`
+margin-top:2rem;
 list-style-type:none;
-&:li{
+li{
+  display:flex;
+  align-items:center;
+  font-size:1.4rem;
   color:#fff;
 }
 `
+const ButtonModal = styled.button`
+cursor:pointer;
+background-color:lightcoral;
+color:#fff;
+text-transform:uppercase;
+padding-left:2rem;
+padding-right:2rem;
+padding-top:1.2rem;
+padding-bottom:1.2rem;
+margin-top:2rem;
+border:none;
+`;
+const ChekBox = styled.input`
+margin-right:0.5rem;
+margin-bottom:0.5rem;
+`;
