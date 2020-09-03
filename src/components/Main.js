@@ -44,18 +44,19 @@ export const Main = (props) => {
 }
 
 const WrapperMain = styled.div`
-height:92vh;
 `;
 const FlexContainer = styled.div`
 padding-top:2rem;
 display:flex;
 justify-content:space-between;
+flex-wrap:wrap;
 `;
 
 const WrapperArr = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
+flex-wrap:wrap;
 border:1px solid lightcoral;
 `;
 const TitleCard = styled.h2`
