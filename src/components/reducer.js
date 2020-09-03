@@ -1,8 +1,7 @@
 
 const INITIAL_STATE = {
   modal: false,
-  countbucket: 0
-
+  countbucket: 0,
 }
 
 function reducer(state = INITIAL_STATE, action) {

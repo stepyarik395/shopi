@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react';
 const products = data.products;
 const App = () => {
   const [ordercount, setCount] = useState(0);
+  const [minprice, setminCount] = useState(0);
+  const [maxprice, setmaxCount] = useState(30)
 
   useEffect(() => {
     const parsedCount = Number(localStorage.getItem("ordercount") || 0)
@@ -20,7 +22,13 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header count={ordercount} />
+      <Header
+        minprice={minprice}
+        maxprice={maxprice}
+        setmincount={setminCount}
+        setmaxcount={setmaxCount}
+        count={ordercount}
+      />
       <Main count={ordercount} setcount={setCount} products={products} />
       <Footer />
     </div>

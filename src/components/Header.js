@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from 'styled-components'
 import { useSelector } from "react-redux";
-import { useState } from 'react';
 
 
 
 export const Header = (props) => {
   const store = useSelector(state => state);
-  const [minprice, setminPrice] = useState(0)
-  const [maxprice, setmaxPrice] = useState(30)
   return (
     <HeaderWrapper>
       <WrapperLinks>
@@ -21,19 +18,24 @@ export const Header = (props) => {
             name="volume"
             min="0"
             max="100"
-            defaultValue={minprice}
+            defaultValue={props.minprice}
             onChange={(e) => {
-              setminPrice(e.target.value)
+              props.setmincount(e.target.value)
             }}
           />
-          <label>от {minprice}</label>
+          <label>от {props.minprice}</label>
         </WrapperSlideinp>
         <WrapperSlideinp>
-          <input type="range" id="volume" name="volume"
-            min="0" max="100" onChange={(e) => {
-              setmaxPrice(e.target.value)
-            }} defaultValue={maxprice} />
-          <label>до {maxprice}</label>
+          <input
+            type="range"
+            id="volume"
+            name="volume"
+            min="0"
+            max="100"
+            onChange={(e) => {
+              props.setmaxcount(e.target.value)
+            }} defaultValue={props.maxprice} />
+          <label>до {props.maxprice}</label>
         </WrapperSlideinp>
         <button>Применить</button>
         <SelectBlock>
