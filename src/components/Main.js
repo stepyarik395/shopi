@@ -30,11 +30,14 @@ export const Main = (props) => {
             <DescText>{product.description}</DescText>
             <Price>{"$" + product.price}</Price>
             <button onClick={() => {
-              props.setbucket(props.countbucket + 1)
+              props.setcount(props.count + 1)
             }}>add to card</button>
           </WrapperArr>
         })}
-        {store.modal ? <Modal currentprod={currentcard} /> : false}
+        {store.modal ? <Modal
+          ordercount={props.count}
+          setcount={props.setcount}
+          currentprod={currentcard} /> : false}
       </FlexContainer>
     </WrapperMain >
   )

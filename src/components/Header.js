@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components'
-
+import { useSelector } from "react-redux";
 
 
 
 export const Header = (props) => {
-
+  const store = useSelector(state => state);
   return (
     <HeaderWrapper>
       <WrapperLinks>
         <Link href='#'>logo</Link>
         <Link href=''>Admin</Link>
-        <NumberBucket>{props.countbucket}</NumberBucket>
+        <NumberBucket>{props.count}</NumberBucket>
       </WrapperLinks>
     </HeaderWrapper>
   )

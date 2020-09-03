@@ -3,26 +3,25 @@ import { Header } from './components/Header'
 import { Main } from './components/Main'
 import { Footer } from './components/Footer'
 import data from './data.json'
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const products = data.products;
-
 const App = () => {
-
-  const [count, SetBucketCount] = useState(0)
+  const [ordercount, setCount] = useState(0);
 
   useEffect(() => {
-    const parsedCount = Number(localStorage.getItem("count") || 0)
-    SetBucketCount(parsedCount)
+    const parsedCount = Number(localStorage.getItem("ordercount") || 0)
+    setCount(parsedCount)
   }, [])
+
   useEffect(() => {
-    localStorage.setItem("count", count)
-  }, [count]);
+    localStorage.setItem("ordercount", ordercount)
+  }, [ordercount]);
 
   return (
     <div className="App">
-      <Header countbucket={count} />
-      <Main setbucket={SetBucketCount} countbucket={count} products={products} />
+      <Header count={ordercount} />
+      <Main count={ordercount} setcount={setCount} products={products} />
       <Footer />
     </div>
   );

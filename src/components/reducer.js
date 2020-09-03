@@ -1,6 +1,7 @@
 
 const INITIAL_STATE = {
   modal: false,
+  countbucket: 0
 
 }
 
@@ -10,10 +11,10 @@ function reducer(state = INITIAL_STATE, action) {
       return {
         modal: !state.modal
       };
-    // case "COUNT__BUCKET":
-    //   return {
-    //     countbucket: state.countbucket + 1
-    //   };
+    case "COUNT__BUCKET":
+      return {
+        countbucket: state.countbucket + 1
+      };
     default:
       return state;
   }

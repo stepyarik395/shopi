@@ -2,6 +2,12 @@ import React from 'react';
 import styled from 'styled-components'
 import { useDispatch } from "react-redux";
 import { keyframes } from 'styled-components';
+
+
+
+
+
+
 export const Modal = (props) => {
 
   const dispatch = useDispatch();
@@ -29,7 +35,12 @@ export const Modal = (props) => {
             </ListSizes>
           )
         })}
-        <ButtonModal>Add to Card</ButtonModal>
+        <ButtonModal onClick={() => {
+          props.setcount(props.ordercount + 1)
+          dispatch({
+            type: "TOGGLE_MODAL"
+          })
+        }}>Add to Card</ButtonModal>
       </WrapperRighWtBlock>
     </WrapperModal>
   )
