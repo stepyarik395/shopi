@@ -1,20 +1,26 @@
 import React from 'react';
 import styled from 'styled-components'
+import { useSelector } from "react-redux";
+
+import { useDispatch } from "react-redux";
 
 
 
+export const Header = (props) => {
+  const store = useSelector(state => state);
+  const dispatch = useDispatch();
 
-export const Header = () => {
+
   return (
     <HeaderWrapper>
       <WrapperLinks>
         <Link href='#'>logo</Link>
         <Link href=''>Admin</Link>
+        <NumberBucket>{props.countbucket}</NumberBucket>
       </WrapperLinks>
     </HeaderWrapper>
   )
 }
-
 const HeaderWrapper = styled.div`
 background-color:yellow;
 `;
@@ -32,3 +38,6 @@ display:block;
 color:black;
 text-decoration:none;
 `
+const NumberBucket = styled.span`
+font-size:2rem;
+`;

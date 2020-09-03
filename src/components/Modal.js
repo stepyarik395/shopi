@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components'
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { keyframes } from 'styled-components'
-
+import { keyframes } from 'styled-components';
 export const Modal = (props) => {
-  const counter = useSelector(state => state);
+
   const dispatch = useDispatch();
   return (
     <WrapperModal>
@@ -65,7 +64,6 @@ const opacit = keyframes`
   }
 `;
 const WrapperModal = styled.div`
-animation-fill-mode:forwards;
 animation: ${opacit} .6s;
 position:absolute;
 background-color:rgba(0,0,0,0.7);

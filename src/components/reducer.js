@@ -2,7 +2,8 @@ import React from 'react';
 
 
 const INITIAL_STATE = {
-  modal: false
+  modal: false,
+
 }
 
 function reducer(state = INITIAL_STATE, action) {
@@ -11,10 +12,10 @@ function reducer(state = INITIAL_STATE, action) {
       return {
         modal: !state.modal
       };
-    case "Bike":
-      return {
-        name: "Jasmin - bike"
-      };
+    // case "COUNT__BUCKET":
+    //   return {
+    //     countbucket: state.countbucket + 1
+    //   };
     default:
       return state;
   }

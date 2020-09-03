@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Modal } from "./Modal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 
@@ -30,6 +30,7 @@ export const Main = (props) => {
             <DescText>{product.description}</DescText>
             <Price>{"$" + product.price}</Price>
             <button onClick={() => {
+              props.setbucket(props.countbucket + 1)
             }}>add to card</button>
           </WrapperArr>
         })}
