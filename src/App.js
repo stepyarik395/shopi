@@ -11,6 +11,14 @@ const App = () => {
 
   const [count, SetBucketCount] = useState(0)
 
+  useEffect(() => {
+    const parsedCount = Number(localStorage.getItem("count") || 0)
+    SetBucketCount(parsedCount)
+  }, [])
+  useEffect(() => {
+    localStorage.setItem("count", count)
+  }, [count]);
+
   return (
     <div className="App">
       <Header countbucket={count} />

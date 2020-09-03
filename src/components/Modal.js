@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components'
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { keyframes } from 'styled-components';
 export const Modal = (props) => {
@@ -14,7 +13,7 @@ export const Modal = (props) => {
         })
       }}>close</ButtonClose>
       <div>
-        <img src={props.currentprod.image} />
+        <img alt={props.currentprod._id} src={props.currentprod.image} />
       </div>
       <WrapperRighWtBlock>
         <TitleModal >{props.currentprod.title}</TitleModal >

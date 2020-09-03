@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Modal } from "./Modal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 
@@ -24,7 +24,7 @@ export const Main = (props) => {
                 type: "TOGGLE_MODAL"
               })
             }}>
-              <img src={product.image} />
+              <img alt={product._id} src={product.image} />
             </a>
             <TitleCard>{product.title}</TitleCard>
             <DescText>{product.description}</DescText>

@@ -1,15 +1,10 @@
 import React from 'react';
 import styled from 'styled-components'
-import { useSelector } from "react-redux";
 
-import { useDispatch } from "react-redux";
 
 
 
 export const Header = (props) => {
-  const store = useSelector(state => state);
-  const dispatch = useDispatch();
-
 
   return (
     <HeaderWrapper>
