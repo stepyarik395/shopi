@@ -20,7 +20,12 @@ export const Modal = (props) => {
       <WrapperRighWtBlock>
         <TitleModal >{props.currentprod.title}</TitleModal >
         <DeckModal>{props.currentprod.description}</DeckModal>
-        {console.log(props.currentprod.avalibaleSizes)}
+        <ModalPrice>{props.currentprod.price}</ModalPrice>
+        <ListSizes>
+          {props.currentprod.avalibaleSizes.map((item) => {
+            return <li key={item}><input type="checkbox" />{item}</li>
+          })}
+        </ListSizes>
       </WrapperRighWtBlock>
     </WrapperModal>
   )
@@ -57,8 +62,20 @@ const WrapperModal = styled.div`
 animation-fill-mode:forwards;
 animation: ${opacit} .6s;
 position:absolute;
-background-color:gray;
+background-color:rgba(0,0,0,0.7);
 display:flex;
 width:100%;
 height:70vh;
 `;
+
+const ModalPrice = styled.span`
+color:#fff;
+font-size:2rem;
+font-weight:bold;
+`;
+const ListSizes = styled.ul`
+list-style-type:none;
+&:li{
+  color:#fff;
+}
+`

@@ -8,11 +8,11 @@ import { useState } from 'react';
 
 
 export const Main = (props) => {
-  const counter = useSelector(state => state);
+  const store = useSelector(state => state);
   const dispatch = useDispatch();
 
-  const [currentcard, setCurentCard] = useState('1231');
-  console.log(currentcard)
+  const [currentcard, setCurentCard] = useState('');
+
   return (
     <WrapperMain>
       <FlexContainer>
@@ -33,7 +33,7 @@ export const Main = (props) => {
             }}>add to card</button>
           </WrapperArr>
         })}
-        {counter.modal ? <Modal currentprod={currentcard} /> : false}
+        {store.modal ? <Modal currentprod={currentcard} /> : false}
       </FlexContainer>
     </WrapperMain >
   )
