@@ -1,11 +1,10 @@
 
-import data from '../data.json'
-
 const INITIAL_STATE = {
   modal: false,
   countbucket: 0,
-  products: data.products
-
+  // products: data.products,
+  defaultmin: 0,
+  defaultmax: 30,
 }
 
 function reducer(state = INITIAL_STATE, action) {
@@ -18,10 +17,6 @@ function reducer(state = INITIAL_STATE, action) {
     case "COUNT__BUCKET":
       return {
         countbucket: state.countbucket + 1
-      };
-    case "PRICE__SORT":
-      return {
-        products: data.products.filter(products => products.price > 30)
       };
     default:
       return state;

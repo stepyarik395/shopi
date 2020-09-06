@@ -4,18 +4,19 @@ import { Modal } from "./Modal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useState } from 'react';
-
+import data from '../data.json'
 
 
 export const Main = (props) => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
   const [currentcard, setCurentCard] = useState('');
+  const [products, setProductts] = useState(data.products)
 
   return (
     <WrapperMain>
       <FlexContainer>
-        {store.products.map((product) => {
+        {products.map((product) => {
           return <WrapperArr key={product._id}>
             <a href={'#' + product._id} onClick={() => {
               setCurentCard(product)

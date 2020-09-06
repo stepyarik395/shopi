@@ -7,8 +7,6 @@ import { useEffect, useState } from 'react';
 
 const App = () => {
   const [ordercount, setCount] = useState(0);
-  const [minprice, setminCount] = useState(0);
-  const [maxprice, setmaxCount] = useState(30)
 
   useEffect(() => {
     const parsedCount = Number(localStorage.getItem("ordercount") || 0)
@@ -22,10 +20,6 @@ const App = () => {
   return (
     <div className="App">
       <Header
-        minprice={minprice}
-        maxprice={maxprice}
-        setmincount={setminCount}
-        setmaxcount={setmaxCount}
         count={ordercount}
       />
       <Main count={ordercount} setcount={setCount} />

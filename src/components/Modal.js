@@ -4,10 +4,6 @@ import { useDispatch } from "react-redux";
 import { keyframes } from 'styled-components';
 
 
-
-
-
-
 export const Modal = (props) => {
 
   const dispatch = useDispatch();
