@@ -78,6 +78,30 @@
         "L"
       ],
       "price": 100
+    },
+    {
+      "_id": "dress8",
+      "image": "/img/dress6.jpg",
+      "title": "Dress8",
+      "description": "about dress 8",
+      "avalibaleSizes": [
+        "XXL",
+        "X",
+        "L"
+      ],
+      "price": 40
+    },
+    {
+      "_id": "dress9",
+      "image": "/img/dress6.jpg",
+      "title": "Dress9",
+      "description": "about dress 9",
+      "avalibaleSizes": [
+        "XXL",
+        "X",
+        "L"
+      ],
+      "price": 50
     }
   ]
 }

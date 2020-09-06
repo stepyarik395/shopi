@@ -2,12 +2,19 @@ import React, { useState } from 'react';
 import styled from 'styled-components'
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { useEffect } from 'react';
 
 export const Header = (props) => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
   const [minnum, setMin] = useState(0);
   const [maxnum, setMax] = useState(30);
+
+  let FilterProducts = () => {
+    let newarr = props.products.filter(function (x) { return x.price >= minnum && x.price <= maxnum });
+    return props.setProducts(newarr)
+  }
+
   return (
     <HeaderWrapper>
       <WrapperLinks>
@@ -20,6 +27,7 @@ export const Header = (props) => {
             name="volume"
             min='0'
             max="100"
+            value={minnum}
             defaultValue={minnum}
             onChange={(e) => {
               setMin(e.target.value)
@@ -29,6 +37,7 @@ export const Header = (props) => {
         </WrapperSlideinp>
         <WrapperSlideinp>
           <input
+            value={maxnum}
             type="range"
             id="volume"
             name="volume"
@@ -41,9 +50,7 @@ export const Header = (props) => {
           <label>до {maxnum}</label>
         </WrapperSlideinp>
         <button onClick={() => {
-          dispatch({
-            type: "PRICE__SORT"
-          })
+          FilterProducts()
         }}>Применить</button>
         <SelectBlock>
           <option>Сортировать</option>

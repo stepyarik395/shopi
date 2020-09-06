@@ -2,7 +2,6 @@
 const INITIAL_STATE = {
   modal: false,
   countbucket: 0,
-  // products: data.products,
   defaultmin: 0,
   defaultmax: 30,
 }
