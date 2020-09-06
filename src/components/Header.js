@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
 import { useSelector } from "react-redux";
-
+import { useDispatch } from "react-redux";
 
 
 export const Header = (props) => {
   const store = useSelector(state => state);
+  const dispatch = useDispatch();
   return (
     <HeaderWrapper>
       <WrapperLinks>
@@ -37,7 +38,11 @@ export const Header = (props) => {
             }} defaultValue={props.maxprice} />
           <label>до {props.maxprice}</label>
         </WrapperSlideinp>
-        <button>Применить</button>
+        <button onClick={() => {
+          dispatch({
+            type: "PRICE__SORT"
+          })
+        }}>Применить</button>
         <SelectBlock>
           <option>Сортировать</option>
           <option>оТ низкой цены</option>

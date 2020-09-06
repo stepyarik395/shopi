@@ -12,19 +12,14 @@ export const Main = (props) => {
   const dispatch = useDispatch();
   const [currentcard, setCurentCard] = useState('');
 
-  let tmp = () => {
-    const result = props.products.filter(products => products.price < 30);
-    // console.log(result)
-  }
-
   return (
     <WrapperMain>
       <FlexContainer>
-
-        {/* {props.products.map((product) => {
+        {store.products.map((product) => {
           return <WrapperArr key={product._id}>
             <a href={'#' + product._id} onClick={() => {
               setCurentCard(product)
+              console.log(store.products)
               dispatch({
                 type: "TOGGLE_MODAL"
               })
@@ -38,9 +33,7 @@ export const Main = (props) => {
               props.setcount(props.count + 1)
             }}>add to card</button>
           </WrapperArr>
-        })} */}
-        {tmp()}
-
+        })}
         {store.modal ? <Modal
           ordercount={props.count}
           setcount={props.setcount}

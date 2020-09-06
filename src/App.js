@@ -2,10 +2,9 @@ import React from 'react';
 import { Header } from './components/Header'
 import { Main } from './components/Main'
 import { Footer } from './components/Footer'
-import data from './data.json'
 import { useEffect, useState } from 'react';
 
-const products = data.products;
+
 const App = () => {
   const [ordercount, setCount] = useState(0);
   const [minprice, setminCount] = useState(0);
@@ -29,7 +28,7 @@ const App = () => {
         setmaxcount={setmaxCount}
         count={ordercount}
       />
-      <Main count={ordercount} setcount={setCount} products={products} />
+      <Main count={ordercount} setcount={setCount} />
       <Footer />
     </div>
   );

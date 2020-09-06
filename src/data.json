@@ -66,6 +66,18 @@
         "X"
       ],
       "price": 10
+    },
+    {
+      "_id": "dress7",
+      "image": "/img/dress6.jpg",
+      "title": "Dress7",
+      "description": "about dress 7",
+      "avalibaleSizes": [
+        "XXL",
+        "X",
+        "L"
+      ],
+      "price": 100
     }
   ]
 }
