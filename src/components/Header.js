@@ -9,12 +9,6 @@ export const Header = (props) => {
   const dispatch = useDispatch();
   const [minnum, setMin] = useState(0);
   const [maxnum, setMax] = useState(30);
-
-  let FilterProducts = () => {
-    let newarr = props.products.filter(function (x) { return x.price >= minnum && x.price <= maxnum });
-    return props.setProducts(newarr)
-  }
-
   return (
     <HeaderWrapper>
       <WrapperLinks>
@@ -28,7 +22,6 @@ export const Header = (props) => {
             min='0'
             max="100"
             value={minnum}
-            defaultValue={minnum}
             onChange={(e) => {
               setMin(e.target.value)
             }}
@@ -43,14 +36,13 @@ export const Header = (props) => {
             name="volume"
             min='0'
             max='100'
-            defaultValue={maxnum}
             onChange={(e) => {
               setMax(e.target.value)
             }} />
           <label>до {maxnum}</label>
         </WrapperSlideinp>
         <button onClick={() => {
-          FilterProducts()
+          props.setProducts(props.products.filter(function (x) { return x.price >= minnum && x.price <= maxnum }))
         }}>Применить</button>
         <SelectBlock>
           <option>Сортировать</option>
