@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { useEffect } from 'react';
 
 export const Header = (props) => {
-  const store = useSelector(state => state);
-  const dispatch = useDispatch();
   const [minnum, setMin] = useState(0);
   const [maxnum, setMax] = useState(30);
   return (
@@ -42,7 +37,8 @@ export const Header = (props) => {
           <label>до {maxnum}</label>
         </WrapperSlideinp>
         <button onClick={() => {
-          props.setProducts(props.products.filter(function (x) { return x.price >= minnum && x.price <= maxnum }))
+
+          // props.setProducts(props.products.filter(function (product) { return product.price >= minnum && product.price <= maxnum }))
         }}>Применить</button>
         <SelectBlock>
           <option>Сортировать</option>

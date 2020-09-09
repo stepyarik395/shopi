@@ -5,8 +5,8 @@ import { keyframes } from 'styled-components';
 
 
 export const Modal = (props) => {
-
   const dispatch = useDispatch();
+
   return (
     <WrapperModal>
       <ButtonClose onClick={() => {

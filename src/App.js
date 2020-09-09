@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import data from './data.json'
 
 
+
 const App = () => {
   const [ordercount, setCount] = useState(0);
   const [products, setProducts] = useState(data.products)
@@ -26,7 +27,7 @@ const App = () => {
         count={ordercount}
         setProducts={setProducts}
       />
-      <Main count={ordercount} setcount={setCount} products={products} />
+      <Main count={ordercount} setcount={setCount} products={products} setProducts={setProducts} />
       <Footer />
     </div>
   );

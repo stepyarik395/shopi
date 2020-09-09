@@ -4,21 +4,40 @@ import { Modal } from "./Modal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 export const Main = (props) => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
   const [currentcard, setCurentCard] = useState('');
+  const [minnum, setMinnum] = useState(10)
+  const [maxnum, setMaxnum] = useState(30)
+
+  let tmp = () => {
+    let smpt = (props.products.filter(function (product) { return product.price >= minnum && product.price <= maxnum }))
+    return props.setProducts(smpt)
+
+  }
 
   return (
     <WrapperMain>
       <FlexContainer>
+        {/* <input type="number" value={minnum} onChange={((e) => {
+          setMinnum(e.target.valueAsDate)
+        })}>
+
+        </input>
+        <input type="number" value={maxnum} onChange={((e) => {
+          setMaxnum(e.target.value)
+        })}></input>
+        <button onClick={() => {
+          tmp()
+        }}>1231113</button> */}
         {props.products.map((product) => {
           return <WrapperArr key={product._id}>
             <a href={'#' + product._id} onClick={() => {
               setCurentCard(product)
-              console.log(store.products)
               dispatch({
                 type: "TOGGLE_MODAL"
               })
