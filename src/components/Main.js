@@ -22,18 +22,8 @@ export const Main = (props) => {
 
   return (
     <WrapperMain>
-      <FlexContainer>
-        {/* <input type="number" value={minnum} onChange={((e) => {
-          setMinnum(e.target.valueAsDate)
-        })}>
 
-        </input>
-        <input type="number" value={maxnum} onChange={((e) => {
-          setMaxnum(e.target.value)
-        })}></input>
-        <button onClick={() => {
-          tmp()
-        }}>1231113</button> */}
+      <FlexContainer>
         {props.products.map((product) => {
           return <WrapperArr key={product._id}>
             <a href={'#' + product._id} onClick={() => {
