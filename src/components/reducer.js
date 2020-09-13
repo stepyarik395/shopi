@@ -2,8 +2,8 @@
 const INITIAL_STATE = {
   modal: false,
   countbucket: 0,
-  defaultmin: 0,
-  defaultmax: 30,
+  // defaultmin: 0,
+  // defaultmax: 30,
 }
 
 function reducer(state = INITIAL_STATE, action) {

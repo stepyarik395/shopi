@@ -11,6 +11,8 @@ const App = () => {
   const [ordercount, setCount] = useState(0);
   const [products, setProducts] = useState(data.products)
 
+
+
   useEffect(() => {
     const parsedCount = Number(localStorage.getItem("ordercount") || 0)
     setCount(parsedCount)

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components'
 
 export const Header = (props) => {
@@ -7,8 +7,9 @@ export const Header = (props) => {
 
 
   let tmp = () => {
-    const result = (props.products.filter(function (product) { return product.price >= minnum && product.price <= maxnum }))
-    console.log(result)
+    let rez = props.products.filter(function (product) { return product.price >= minnum && product.price <= maxnum });
+    props.setProducts(rez)
+    // console.log(rez)
   }
 
 

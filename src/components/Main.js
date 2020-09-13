@@ -11,18 +11,20 @@ export const Main = (props) => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
   const [currentcard, setCurentCard] = useState('');
-  const [minnum, setMinnum] = useState(10)
-  const [maxnum, setMaxnum] = useState(30)
 
-  let tmp = () => {
-    let smpt = (props.products.filter(function (product) { return product.price >= minnum && product.price <= maxnum }))
-    return props.setProducts(smpt)
+  useEffect(() => {
+    props.setProducts(props.products)
+  }, [props.products])
 
-  }
+
+  // let tmp = () => {
+  //   let smpt = (props.products.filter(function (product) { return product.price >= minnum && product.price <= maxnum }))
+  //   return props.setProducts(smpt)
+
+  // }
 
   return (
     <WrapperMain>
-
       <FlexContainer>
         {props.products.map((product) => {
           return <WrapperArr key={product._id}>
