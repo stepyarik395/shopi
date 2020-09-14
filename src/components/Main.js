@@ -10,15 +10,16 @@ export const Main = (props) => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
 
+  console.log(store.bucketitems)
+
   return (
     <WrapperMain>
       <FlexContainer>
-
         {props.products.filter(product => product.price >= props.minnum && product.price <= props.maxnum).map((product) => {
           return <WrapperArr key={product._id}>
             <a href={'#' + product._id} onClick={(e) => {
               dispatch({
-                type: "TOGGLE_MODAL",
+                type: "TOGGLE__MODAL",
                 payload: product
               })
             }}>
@@ -27,13 +28,16 @@ export const Main = (props) => {
             <TitleCard>{product.title}</TitleCard>
             <DescText>{product.description}</DescText>
             <Price>{"$" + product.price}</Price>
-            <button onClick={() => {
-              props.setcount(props.count + 1)
+            <button onClick={(e) => {
+              dispatch({
+                type: "BUCKET__ITEM",
+                payload: product
+              })
+              // props.setcount(props.count + 1)
             }}>add to card</button>
           </WrapperArr>
         })
         }
-
         {store.modal ? <Modal
           ordercount={props.count}
           setcount={props.setcount} /> : false}

@@ -13,7 +13,7 @@ export const Modal = (props) => {
     <WrapperModal>
       <ButtonClose onClick={() => {
         dispatch({
-          type: "TOGGLE_MODAL"
+          type: "TOGGLE__MODAL"
         })
       }}>close</ButtonClose>
       <div>
@@ -36,7 +36,7 @@ export const Modal = (props) => {
         <ButtonModal onClick={() => {
           props.setcount(props.ordercount + 1)
           dispatch({
-            type: "TOGGLE_MODAL"
+            type: "TOGGLE__MODAL"
           })
         }}>Add to Card</ButtonModal>
       </WrapperRighWtBlock>

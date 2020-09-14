@@ -2,13 +2,14 @@
 const INITIAL_STATE = {
   modal: false,
   countbucket: 0,
-  select_prod: []
+  select_prod: [],
+  bucketitems: []
 }
-// console.log(select_prod)
+
 
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case "TOGGLE_MODAL":
+    case "TOGGLE__MODAL":
       return {
         modal: !state.modal,
         select_prod: action.payload
@@ -20,6 +21,10 @@ function reducer(state = INITIAL_STATE, action) {
     case "SELECT__PRODUCT":
       return {
         selectproduct: state.countbucket + 1
+      };
+    case "BUCKET__ITEM":
+      return {
+        bucketitems: action.payload
       };
     default:
       return state;
