@@ -40,8 +40,6 @@ const App = () => {
         count={ordercount}
         setcount={setCount}
         setProducts={setProducts}
-
-
       />
       <Footer />
     </div>

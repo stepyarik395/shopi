@@ -34,7 +34,7 @@ export const Modal = (props) => {
           )
         })}
         <ButtonModal onClick={() => {
-          props.setcount(props.ordercount + 1)
+          // props.setcount(props.ordercount + 1)
           dispatch({
             type: "TOGGLE__MODAL"
           })

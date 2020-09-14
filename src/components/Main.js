@@ -9,8 +9,8 @@ import { useState } from 'react';
 export const Main = (props) => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
-
   console.log(store.bucketitems)
+
 
   return (
     <WrapperMain>
@@ -33,7 +33,6 @@ export const Main = (props) => {
                 type: "BUCKET__ITEM",
                 payload: product
               })
-              // props.setcount(props.count + 1)
             }}>add to card</button>
           </WrapperArr>
         })
