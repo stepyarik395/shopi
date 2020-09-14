@@ -4,7 +4,6 @@ import { Modal } from "./Modal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useState } from 'react';
-import { useEffect } from 'react';
 
 
 export const Main = (props) => {
@@ -12,21 +11,12 @@ export const Main = (props) => {
   const dispatch = useDispatch();
   const [currentcard, setCurentCard] = useState('');
 
-  useEffect(() => {
-    props.setProducts(props.products)
-  }, [props.products])
-
-
-  // let tmp = () => {
-  //   let smpt = (props.products.filter(function (product) { return product.price >= minnum && product.price <= maxnum }))
-  //   return props.setProducts(smpt)
-
-  // }
 
   return (
     <WrapperMain>
       <FlexContainer>
-        {props.products.map((product) => {
+
+        {props.products.filter(product => product.price >= props.minnum && product.price <= props.maxnum).map((product) => {
           return <WrapperArr key={product._id}>
             <a href={'#' + product._id} onClick={() => {
               setCurentCard(product)
@@ -43,7 +33,9 @@ export const Main = (props) => {
               props.setcount(props.count + 1)
             }}>add to card</button>
           </WrapperArr>
-        })}
+        })
+        }
+
         {store.modal ? <Modal
           ordercount={props.count}
           setcount={props.setcount}

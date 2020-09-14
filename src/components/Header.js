@@ -2,16 +2,6 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components'
 
 export const Header = (props) => {
-  const [minnum, setMin] = useState(0);
-  const [maxnum, setMax] = useState(30);
-
-
-  let tmp = () => {
-    let rez = props.products.filter(function (product) { return product.price >= minnum && product.price <= maxnum });
-    props.setProducts(rez)
-    // console.log(rez)
-  }
-
 
   return (
     <HeaderWrapper>
@@ -19,8 +9,9 @@ export const Header = (props) => {
         <Link href='#'>logo</Link>
         <Link href=''>Admin</Link>
         <WrapperSlideinp>
-          <select value={minnum} onChange={(e) => {
-            setMin(e.target.value)
+          <SpanText>цена от</SpanText>
+          <select value={props.minnum} onChange={(e) => {
+            props.setMin(e.target.value)
           }}>
             <option value='0'>0</option>
             <option value='10'>10</option>
@@ -34,22 +25,11 @@ export const Header = (props) => {
             <option value='90'>90</option>
             <option value='100'>100</option>
           </select>
-          {/* <input
-            type="range"
-            id="volume"
-            name="volume"
-            min='0'
-            max="100"
-            value={minnum}
-            onChange={(e) => {
-              setMin(e.target.value)
-            }}
-          />
-          <label>от {minnum}</label> */}
         </WrapperSlideinp>
         <WrapperSlideinp>
-          <select value={maxnum} onChange={(e) => {
-            setMax(e.target.value)
+          <SpanText>цена до</SpanText>
+          <select value={props.maxnum} onChange={(e) => {
+            props.setMax(e.target.value)
           }}>
             <option value='0'>0</option>
             <option value='10'>10</option>
@@ -63,29 +43,7 @@ export const Header = (props) => {
             <option value='90'>90</option>
             <option value='100'>100</option>
           </select>
-          {/* <input
-            value={maxnum}
-            type="range"
-            id="volume"
-            name="volume"
-            min='0'
-            max='100'
-            onChange={(e) => {
-              setMax(e.target.value)
-            }} />
-          <label>до {maxnum}</label> */}
         </WrapperSlideinp>
-        <button onClick={() => {
-          tmp()
-          // const result = props.products.filter((product) => {
-          //   product.price >= minnum && product.price <= maxnum
-          //   console.log(result);
-          // console.log(props.products.filter((product) => {
-          //   return product.price
-          // }));
-          // console.log(props.setProducts(props.products))
-          // props.setProducts(props.products.filter(function (product) { return product.price >= minnum && product.price <= maxnum }))
-        }}>Применить</button>
         <SelectBlock>
           <option>Сортировать</option>
           <option>оТ низкой цены</option>
@@ -121,4 +79,7 @@ const SelectBlock = styled.select`
 const WrapperSlideinp = styled.div`
 display:flex;
 align-items:center;
+`;
+const SpanText = styled.span`
+font-size:2rem;
 `;
