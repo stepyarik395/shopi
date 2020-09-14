@@ -9,8 +9,6 @@ import { useState } from 'react';
 export const Main = (props) => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
-  const [currentcard, setCurentCard] = useState('');
-
 
   return (
     <WrapperMain>
@@ -18,10 +16,10 @@ export const Main = (props) => {
 
         {props.products.filter(product => product.price >= props.minnum && product.price <= props.maxnum).map((product) => {
           return <WrapperArr key={product._id}>
-            <a href={'#' + product._id} onClick={() => {
-              setCurentCard(product)
+            <a href={'#' + product._id} onClick={(e) => {
               dispatch({
-                type: "TOGGLE_MODAL"
+                type: "TOGGLE_MODAL",
+                payload: product
               })
             }}>
               <img alt={product._id} src={product.image} />
@@ -38,8 +36,7 @@ export const Main = (props) => {
 
         {store.modal ? <Modal
           ordercount={props.count}
-          setcount={props.setcount}
-          currentprod={currentcard} /> : false}
+          setcount={props.setcount} /> : false}
       </FlexContainer>
     </WrapperMain >
   )

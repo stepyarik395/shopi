@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components'
 import { useDispatch } from "react-redux";
 import { keyframes } from 'styled-components';
+import { useSelector } from "react-redux";
 
 
 export const Modal = (props) => {
   const dispatch = useDispatch();
+  const store = useSelector(state => state);
 
   return (
     <WrapperModal>
@@ -15,13 +17,13 @@ export const Modal = (props) => {
         })
       }}>close</ButtonClose>
       <div>
-        <img alt={props.currentprod._id} src={props.currentprod.image} />
+        <img alt={store.select_prod._id} src={store.select_prod.image} />
       </div>
       <WrapperRighWtBlock>
-        <TitleModal >{props.currentprod.title}</TitleModal >
-        <DeckModal>{props.currentprod.description}</DeckModal>
-        <ModalPrice>{props.currentprod.price}</ModalPrice>
-        {props.currentprod.avalibaleSizes.map((item) => {
+        <TitleModal >{store.select_prod.title}</TitleModal >
+        <DeckModal>{store.select_prod.description}</DeckModal>
+        <ModalPrice>{store.select_prod.price}</ModalPrice>
+        {store.select_prod.avalibaleSizes.map((item) => {
           return (
             <ListSizes key={item}>
               <li>
@@ -38,7 +40,7 @@ export const Modal = (props) => {
           })
         }}>Add to Card</ButtonModal>
       </WrapperRighWtBlock>
-    </WrapperModal>
+    </WrapperModal >
   )
 }
 
