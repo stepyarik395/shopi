@@ -19,7 +19,7 @@ export const Main = (props) => {
           return <WrapperArr key={product._id}>
             <a href={'#' + product._id} onClick={(e) => {
               dispatch({
-                type: "TOGGLE__MODAL",
+                type: "OPEN__MODAL",
                 payload: product
               })
             }}>

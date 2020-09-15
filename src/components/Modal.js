@@ -3,17 +3,22 @@ import styled from 'styled-components'
 import { useDispatch } from "react-redux";
 import { keyframes } from 'styled-components';
 import { useSelector } from "react-redux";
+import { useEffect, useState } from 'react';
 
 
 export const Modal = () => {
   const dispatch = useDispatch();
   const store = useSelector(state => state);
+  const [tmp, handletmp] = useState(false)
+  const [arrsizes, handleSizes] = useState([])
+
+  console.log(arrsizes);
 
   return (
     <WrapperModal>
       <ButtonClose onClick={() => {
         dispatch({
-          type: "TOGGLE__MODAL"
+          type: "CLOSE__MODAL"
         })
       }}>close</ButtonClose>
       <div>
@@ -23,20 +28,29 @@ export const Modal = () => {
         <TitleModal >{store.select_prod.title}</TitleModal >
         <DeckModal>{store.select_prod.description}</DeckModal>
         <ModalPrice>{store.select_prod.price}</ModalPrice>
-        {store.select_prod.avalibaleSizes.map((item) => {
-          return (
-            <ListSizes key={item}>
-              <li>
-                < ChekBox type="checkbox" />
+        <ListSizes >
+          {store.select_prod.avalibaleSizes.map((item) => {
+            return (
+              <li key={item}>
+                <ChekBox type="checkbox"
+                  name={item}
+                  onChange={(e) => {
+                    if (e.target.checked) {
+                      handleSizes(arrsizes.concat(e.target.name))
+                    } else {
+
+                    }
+                  }}
+                >
+                </ChekBox>
                 {item}
               </li>
-            </ListSizes>
-          )
-        })}
+            )
+          })}
+        </ListSizes>
         <ButtonModal onClick={() => {
-          // props.setcount(props.ordercount + 1)
           dispatch({
-            type: "TOGGLE__MODAL"
+            type: "CLOSE__MODAL"
           })
         }}>Add to Card</ButtonModal>
       </WrapperRighWtBlock>

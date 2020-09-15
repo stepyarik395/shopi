@@ -6,15 +6,19 @@ const INITIAL_STATE = {
   bucketitems: []
 }
 
-
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case "TOGGLE__MODAL":
+    case "OPEN__MODAL":
       return {
         ...state,
         modal: !state.modal,
         select_prod: action.payload,
       };
+    case "CLOSE__MODAL":
+      return {
+        ...state,
+        modal: !state.modal
+      }
     case "COUNT__BUCKET":
       return {
         countbucket: state.countbucket + 1
@@ -26,6 +30,9 @@ function reducer(state = INITIAL_STATE, action) {
     case "BUCKET__ITEM":
       return {
         bucketitems: state.bucketitems.concat(action.payload)
+      };
+    case "MODAL__ADD__BUCKET":
+      return {
       };
     default:
       return state;
