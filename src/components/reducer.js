@@ -11,9 +11,9 @@ function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case "TOGGLE__MODAL":
       return {
+        ...state,
         modal: !state.modal,
         select_prod: action.payload,
-        // bucketitems: state.bucketitems.concat(action.payload)
       };
     case "COUNT__BUCKET":
       return {
@@ -25,7 +25,6 @@ function reducer(state = INITIAL_STATE, action) {
       };
     case "BUCKET__ITEM":
       return {
-        // ...state,
         bucketitems: state.bucketitems.concat(action.payload)
       };
     default:

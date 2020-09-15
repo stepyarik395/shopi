@@ -37,9 +37,7 @@ export const Main = (props) => {
           </WrapperArr>
         })
         }
-        {store.modal ? <Modal
-          ordercount={props.count}
-          setcount={props.setcount} /> : false}
+        {store.modal ? <Modal /> : false}
       </FlexContainer>
     </WrapperMain >
   )
