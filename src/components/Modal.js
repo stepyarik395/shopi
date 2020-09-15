@@ -9,7 +9,6 @@ import { useEffect, useState } from 'react';
 export const Modal = () => {
   const dispatch = useDispatch();
   const store = useSelector(state => state);
-  const [tmp, handletmp] = useState(false)
   const [arrsizes, handleSizes] = useState([])
 
   console.log(arrsizes);
@@ -38,7 +37,8 @@ export const Modal = () => {
                     if (e.target.checked) {
                       handleSizes(arrsizes.concat(e.target.name))
                     } else {
-
+                      // arrsizes.pop()
+                      // handleSizes(arrsizes)
                     }
                   }}
                 >
