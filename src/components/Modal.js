@@ -11,7 +11,7 @@ export const Modal = () => {
   const store = useSelector(state => state);
   const [arrsizes, handleSizes] = useState([])
 
-  console.log(arrsizes);
+  // console.log(arrsizes);
 
   return (
     <WrapperModal>
@@ -37,8 +37,8 @@ export const Modal = () => {
                     if (e.target.checked) {
                       handleSizes(arrsizes.concat(e.target.name))
                     } else {
-                      // arrsizes.pop()
-                      // handleSizes(arrsizes)
+                      // handleSizes(arrsizes.join())
+                      // handleSizes(arrsizes
                     }
                   }}
                 >
@@ -48,6 +48,7 @@ export const Modal = () => {
             )
           })}
         </ListSizes>
+        {console.log(arrsizes)}
         <ButtonModal onClick={() => {
           dispatch({
             type: "CLOSE__MODAL"
