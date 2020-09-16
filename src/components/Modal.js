@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { useDispatch } from "react-redux";
 import { keyframes } from 'styled-components';
 import { useSelector } from "react-redux";
-import { useEffect, useState } from 'react';
 
 
 export const Modal = () => {

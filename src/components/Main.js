@@ -3,13 +3,11 @@ import styled from 'styled-components';
 import { Modal } from "./Modal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { useState } from 'react';
 
 
 export const Main = (props) => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
-  console.log(store.bucketitems)
 
   return (
     <WrapperMain>
