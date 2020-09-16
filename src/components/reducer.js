@@ -4,7 +4,8 @@ const INITIAL_STATE = {
   countbucket: 0,
   select_prod: [],
   bucketitems: [],
-  arrsizes: []
+  arrsizes: [],
+  ordercount: 0
 }
 
 function reducer(state = INITIAL_STATE, action) {
@@ -20,16 +21,9 @@ function reducer(state = INITIAL_STATE, action) {
         ...state,
         modal: !state.modal
       }
-    case "COUNT__BUCKET":
-      return {
-        countbucket: state.countbucket + 1
-      };
-    case "SELECT__PRODUCT":
-      return {
-        selectproduct: state.countbucket + 1
-      };
     case "BUCKET__ITEM":
       return {
+        ordercount: state.ordercount + 1,
         bucketitems: state.bucketitems.concat(action.payload)
       };
     case "MODAL__ADD__BUCKET":
@@ -45,6 +39,11 @@ function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         arrsizes: action.payload
+      };
+    case "COUNT__ORDER":
+      return {
+        ...state,
+        ordercount: state.ordercount + 1
       };
     default:
       return state;

@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components'
+import { useSelector } from "react-redux";
+
 
 export const Header = (props) => {
+  const store = useSelector(state => state);
 
   return (
     <HeaderWrapper>
@@ -49,7 +52,7 @@ export const Header = (props) => {
           <option>оТ низкой цены</option>
           <option>От высокой цены</option>
         </SelectBlock>
-        <NumberBucket>{props.count}</NumberBucket>
+        <NumberBucket>{store.ordercount}</NumberBucket>
       </WrapperLinks>
     </HeaderWrapper >
   )

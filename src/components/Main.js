@@ -9,6 +9,9 @@ export const Main = (props) => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
 
+
+  console.log(store.ordercount)
+
   return (
     <WrapperMain>
       <FlexContainer>
@@ -28,7 +31,7 @@ export const Main = (props) => {
             <button onClick={(e) => {
               dispatch({
                 type: "BUCKET__ITEM",
-                payload: product
+                payload: product,
               })
             }}>add to card</button>
           </WrapperArr>

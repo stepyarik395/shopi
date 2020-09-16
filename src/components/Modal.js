@@ -9,13 +9,7 @@ export const Modal = () => {
   const dispatch = useDispatch();
   const store = useSelector(state => state);
   // const [arrsizes, handleSizes] = useState([]);
-
-
-
-
-
   // console.log(arrsizes);
-
 
   return (
     <WrapperModal>
@@ -65,7 +59,6 @@ export const Modal = () => {
           })
           dispatch({
             type: "MODAL__ADD__BUCKET",
-            // payload: arrsizes
           })
         }}>Add to Card</ButtonModal>
       </WrapperRighWtBlock>
