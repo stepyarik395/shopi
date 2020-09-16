@@ -12,7 +12,7 @@ export const Modal = () => {
   // const [arrsizes, handleSizes] = useState([]);
 
 
-  console.log(store.arrsizes)
+
 
 
   // console.log(arrsizes);
