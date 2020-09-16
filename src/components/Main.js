@@ -11,7 +11,6 @@ export const Main = (props) => {
   const dispatch = useDispatch();
   console.log(store.bucketitems)
 
-
   return (
     <WrapperMain>
       <FlexContainer>

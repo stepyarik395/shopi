@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { useDispatch } from "react-redux";
 import { keyframes } from 'styled-components';
 import { useSelector } from "react-redux";
@@ -9,9 +9,14 @@ import { useEffect, useState } from 'react';
 export const Modal = () => {
   const dispatch = useDispatch();
   const store = useSelector(state => state);
-  const [arrsizes, handleSizes] = useState([])
+  // const [arrsizes, handleSizes] = useState([]);
 
-  console.log(arrsizes);
+
+  console.log(store.arrsizes)
+
+
+  // console.log(arrsizes);
+
 
   return (
     <WrapperModal>
@@ -28,16 +33,24 @@ export const Modal = () => {
         <DeckModal>{store.select_prod.description}</DeckModal>
         <ModalPrice>{store.select_prod.price}</ModalPrice>
         <ListSizes >
-          {store.select_prod.avalibaleSizes.map((item) => {
+          {store.select_prod.avalibaleSizes.map((item, index) => {
             return (
               <li key={item}>
                 <ChekBox type="checkbox"
                   name={item}
                   onChange={(e) => {
                     if (e.target.checked) {
-                      handleSizes(arrsizes.concat(e.target.name))
+                      dispatch({
+                        type: "ADD__SIZE",
+                        payload: e.target.name
+                      })
+                      // handleSizes(arrsizes.concat(e.target.name))
                     } else {
-                      handleSizes(arrsizes.filter((item) => { return item !== e.target.name }))
+                      dispatch({
+                        type: "DELETE__SIZE",
+                        payload: store.arrsizes.filter((item) => { return item !== e.target.name })
+                      })
+                      // handleSizes(arrsizes.filter((item) => { return item !== e.target.name }))
                     }
                   }}
                 >
@@ -50,6 +63,10 @@ export const Modal = () => {
         <ButtonModal onClick={() => {
           dispatch({
             type: "CLOSE__MODAL"
+          })
+          dispatch({
+            type: "MODAL__ADD__BUCKET",
+            // payload: arrsizes
           })
         }}>Add to Card</ButtonModal>
       </WrapperRighWtBlock>

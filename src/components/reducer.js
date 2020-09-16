@@ -3,7 +3,8 @@ const INITIAL_STATE = {
   modal: false,
   countbucket: 0,
   select_prod: [],
-  bucketitems: []
+  bucketitems: [],
+  arrsizes: []
 }
 
 function reducer(state = INITIAL_STATE, action) {
@@ -33,6 +34,17 @@ function reducer(state = INITIAL_STATE, action) {
       };
     case "MODAL__ADD__BUCKET":
       return {
+        bucketitems: state.bucketitems.concat(state.select_prod)
+      };
+    case "ADD__SIZE":
+      return {
+        ...state,
+        arrsizes: state.arrsizes.concat(action.payload)
+      };
+    case "DELETE__SIZE":
+      return {
+        ...state,
+        arrsizes: action.payload
       };
     default:
       return state;
