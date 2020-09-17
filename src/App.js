@@ -15,17 +15,13 @@ const App = () => {
   const [minnum, setMin] = useState(0);
   const [maxnum, setMax] = useState(30);
 
-  useEffect(() => {
-    const parsedCount = Number(localStorage.getItem("ordercount") || 0)
-    // dispatch({
-    //   type: "COUNT__ORDER",
-    // })
-    // setCount(parsedCount)
-  }, [])
-
   // useEffect(() => {
-  //   localStorage.setItem("ordercount", store.ordercount)
-  // }, [store.ordercount]);
+  //   localStorage.getItem("ordercount", || 0);
+  // }, [])
+
+  useEffect(() => {
+    window.localStorage.setItem('count', store.ordercount)
+  });
 
   return (
     <div className="App">

@@ -8,8 +8,6 @@ import { useSelector } from "react-redux";
 export const Modal = () => {
   const dispatch = useDispatch();
   const store = useSelector(state => state);
-  // const [arrsizes, handleSizes] = useState([]);
-  // console.log(arrsizes);
 
   return (
     <WrapperModal>
@@ -37,13 +35,11 @@ export const Modal = () => {
                         type: "ADD__SIZE",
                         payload: e.target.name
                       })
-                      // handleSizes(arrsizes.concat(e.target.name))
                     } else {
                       dispatch({
                         type: "DELETE__SIZE",
                         payload: store.arrsizes.filter((item) => { return item !== e.target.name })
                       })
-                      // handleSizes(arrsizes.filter((item) => { return item !== e.target.name }))
                     }
                   }}
                 >
