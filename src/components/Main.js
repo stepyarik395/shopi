@@ -9,9 +9,6 @@ export const Main = (props) => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
 
-
-  console.log(store.ordercount)
-
   return (
     <WrapperMain>
       <FlexContainer>
