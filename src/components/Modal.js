@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { keyframes } from 'styled-components';
 import { useSelector } from "react-redux";
 
-
 export const Modal = () => {
   const dispatch = useDispatch();
   const store = useSelector(state => state);

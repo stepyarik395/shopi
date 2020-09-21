@@ -1,4 +1,3 @@
-
 const INITIAL_STATE = {
   modal: false,
   countbucket: 0,
@@ -7,8 +6,7 @@ const INITIAL_STATE = {
   arrsizes: [],
   minprice: 0,
   maxprice: 30,
-  // ordercount: 0
-  ordercount: 0,
+  ordercount: Number(window.localStorage.getItem('count') || 0)
 }
 
 function reducer(state = INITIAL_STATE, action) {

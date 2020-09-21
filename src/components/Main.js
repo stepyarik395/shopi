@@ -4,7 +4,6 @@ import { Modal } from "./Modal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
-
 export const Main = (props) => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();

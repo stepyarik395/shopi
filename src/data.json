@@ -2,7 +2,7 @@
   "products": [
     {
       "_id": "dress1",
-      "image": "/img/dress1.jpg",
+      "image": "https://via.placeholder.com/300",
       "title": "Dress1",
       "description": "about dress 1",
       "avalibaleSizes": [
@@ -14,7 +14,7 @@
     },
     {
       "_id": "dress2",
-      "image": "/img/dress2.jpg",
+      "image": "https://via.placeholder.com/300",
       "title": "Dress2",
       "description": "about dress 2",
       "avalibaleSizes": [
@@ -25,7 +25,7 @@
     },
     {
       "_id": "dress3",
-      "image": "/img/dress3.jpg",
+      "image": "https://via.placeholder.com/300",
       "title": "Dress3",
       "description": "about dress 3",
       "avalibaleSizes": [
@@ -36,7 +36,7 @@
     },
     {
       "_id": "dress4",
-      "image": "/img/dress4.jpg",
+      "image": "https://via.placeholder.com/300",
       "title": "Dress4",
       "description": "about dress 4",
       "avalibaleSizes": [
@@ -47,7 +47,7 @@
     },
     {
       "_id": "dress5",
-      "image": "/img/dress5.jpg",
+      "image": "https://via.placeholder.com/300",
       "title": "Dress5",
       "description": "about dress 5",
       "avalibaleSizes": [
@@ -58,7 +58,7 @@
     },
     {
       "_id": "dress6",
-      "image": "/img/dress6.jpg",
+      "image": "https://via.placeholder.com/300",
       "title": "Dress6",
       "description": "about dress 6",
       "avalibaleSizes": [
@@ -69,7 +69,7 @@
     },
     {
       "_id": "dress7",
-      "image": "/img/dress6.jpg",
+      "image": "https://via.placeholder.com/300",
       "title": "Dress7",
       "description": "about dress 7",
       "avalibaleSizes": [
@@ -81,7 +81,7 @@
     },
     {
       "_id": "dress8",
-      "image": "/img/dress6.jpg",
+      "image": "https://via.placeholder.com/300",
       "title": "Dress8",
       "description": "about dress 8",
       "avalibaleSizes": [
@@ -93,7 +93,7 @@
     },
     {
       "_id": "dress9",
-      "image": "/img/dress6.jpg",
+      "image": "https://via.placeholder.com/300",
       "title": "Dress9",
       "description": "about dress 9",
       "avalibaleSizes": [

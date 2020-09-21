@@ -10,19 +10,9 @@ const App = () => {
   const store = useSelector(state => state);
   const [products, setProducts] = useState(data.products)
 
-  // useEffect(() => {
-  //   window.localStorage.setItem('count', store.ordercount)
-  // });
-
-
   useEffect(() => {
     window.localStorage.setItem('count', store.ordercount)
-    console.log(window.localStorage.getItem('count'))
   });
-  // useEffect(() => {
-  //   window.localStorage.getItem('count', store.ordercount)
-  // });
-
 
   return (
     <div className="App">
