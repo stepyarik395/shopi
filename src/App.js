@@ -4,40 +4,34 @@ import { Main } from './components/Main'
 import { Footer } from './components/Footer'
 import { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
 import data from './data.json'
 
 const App = () => {
   const store = useSelector(state => state);
-  const dispatch = useDispatch();
-
   const [products, setProducts] = useState(data.products)
-  const [minnum, setMin] = useState(0);
-  const [maxnum, setMax] = useState(30);
+
+  // useEffect(() => {
+  //   window.localStorage.setItem('count', store.ordercount)
+  // });
+
 
   useEffect(() => {
     window.localStorage.setItem('count', store.ordercount)
+    console.log(window.localStorage.getItem('count'))
   });
+  // useEffect(() => {
+  //   window.localStorage.getItem('count', store.ordercount)
+  // });
+
 
   return (
     <div className="App">
       <Header
-        setMin={setMin}
-        setMax={setMax}
-        minnum={minnum}
-        maxnum={maxnum}
         products={products}
-        // count={ordercount}
         setProducts={setProducts}
       />
       <Main
-        setMin={setMin}
-        setMax={setMax}
-        minnum={minnum}
-        maxnum={maxnum}
         products={products}
-        // count={ordercount}
-        // setcount={setCount}
         setProducts={setProducts}
       />
       <Footer />

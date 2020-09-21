@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
-
-export const Header = (props) => {
+export const Header = () => {
   const store = useSelector(state => state);
+  const dispatch = useDispatch();
+  console.log(store.ordercount)
 
   return (
     <HeaderWrapper>
@@ -13,8 +15,11 @@ export const Header = (props) => {
         <Link href=''>Admin</Link>
         <WrapperSlideinp>
           <SpanText>цена от</SpanText>
-          <select value={props.minnum} onChange={(e) => {
-            props.setMin(e.target.value)
+          <select value={store.minprice} onChange={(e) => {
+            dispatch({
+              type: "MIN__COUNT",
+              payload: e.target.value
+            })
           }}>
             <option value='0'>0</option>
             <option value='10'>10</option>
@@ -31,8 +36,11 @@ export const Header = (props) => {
         </WrapperSlideinp>
         <WrapperSlideinp>
           <SpanText>цена до</SpanText>
-          <select value={props.maxnum} onChange={(e) => {
-            props.setMax(e.target.value)
+          <select value={store.maxprice} onChange={(e) => {
+            dispatch({
+              type: "MAX__COUNT",
+              payload: e.target.value
+            })
           }}>
             <option value='0'>0</option>
             <option value='10'>10</option>
@@ -48,8 +56,8 @@ export const Header = (props) => {
           </select>
         </WrapperSlideinp>
         <SelectBlock>
-          <option>Сортировать</option>
-          <option>оТ низкой цены</option>
+          <option>Самые новые</option>
+          <option>От низкой цены</option>
           <option>От высокой цены</option>
         </SelectBlock>
         <NumberBucket>{store.ordercount}</NumberBucket>

@@ -12,7 +12,7 @@ export const Main = (props) => {
   return (
     <WrapperMain>
       <FlexContainer>
-        {props.products.filter(product => product.price >= props.minnum && product.price <= props.maxnum).map((product) => {
+        {props.products.filter(product => product.price >= store.minprice && product.price <= store.maxprice).map((product) => {
           return <WrapperArr key={product._id}>
             <a href={'#' + product._id} onClick={(e) => {
               dispatch({
