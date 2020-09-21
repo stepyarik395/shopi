@@ -19,7 +19,7 @@ export const Modal = () => {
         <img alt={store.select_prod._id} src={store.select_prod.image} />
       </div>
       <WrapperRighWtBlock>
-        <TitleModal >{store.select_prod.title}</TitleModal >
+        <TitleModal>{store.select_prod.title}</TitleModal >
         <DeckModal>{store.select_prod.description}</DeckModal>
         <ModalPrice>{store.select_prod.price}</ModalPrice>
         <ListSizes >

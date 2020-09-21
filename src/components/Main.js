@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Modal } from "./Modal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { Sidebar } from '../components/Sidebar'
 
 export const Main = (props) => {
   const store = useSelector(state => state);
@@ -35,6 +36,7 @@ export const Main = (props) => {
         }
         {store.modal ? <Modal /> : false}
       </FlexContainer>
+      <Sidebar></Sidebar>
     </WrapperMain >
   )
 }

@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 export const Header = () => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
-  console.log(store.ordercount)
 
   return (
     <HeaderWrapper>
@@ -68,7 +67,6 @@ export const Header = () => {
 const HeaderWrapper = styled.div`
 background-color:yellow;
 `;
-
 const WrapperLinks = styled.div`
 height:6vh;
 display:flex;

@@ -6,6 +6,7 @@ const INITIAL_STATE = {
   arrsizes: [],
   minprice: 0,
   maxprice: 30,
+  totalprice: 0,
   ordercount: Number(window.localStorage.getItem('count') || 0)
 }
 
@@ -25,12 +26,14 @@ function reducer(state = INITIAL_STATE, action) {
     case "BUCKET__ITEM":
       return {
         ...state,
+        totalprice: state.totalprice += action.payload.price,
         ordercount: state.ordercount + 1,
         bucketitems: state.bucketitems.concat(action.payload)
       };
     case "MODAL__ADD__BUCKET":
       return {
         ...state,
+        totalprice: state.totalprice += state.select_prod.price,
         ordercount: state.ordercount + 1,
         bucketitems: state.bucketitems.concat(state.select_prod)
       };
