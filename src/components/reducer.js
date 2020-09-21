@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
   modal: false,
+  sidebar: false,
   countbucket: 0,
   select_prod: [],
   bucketitems: [],
@@ -61,6 +62,11 @@ function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         maxprice: action.payload
+      };
+    case "SIDE__TOGLE":
+      return {
+        ...state,
+        sidebar: !state.sidebar
       };
     default:
       return state;

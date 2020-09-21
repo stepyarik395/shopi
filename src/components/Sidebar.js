@@ -18,5 +18,7 @@ export const Sidebar = () => {
   )
 }
 const WrapperSidebar = styled.div`
-width:30%;
+/* display:none; */
+width:40%;
+background-color: lightgoldenrodyellow;
 `

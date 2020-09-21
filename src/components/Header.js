@@ -59,6 +59,11 @@ export const Header = () => {
           <option>От низкой цены</option>
           <option>От высокой цены</option>
         </SelectBlock>
+        <a href="#" onClick={() => {
+          dispatch({
+            type: "SIDE__TOGLE"
+          })
+        }}>BUCKET</a>
         <NumberBucket>{store.ordercount}</NumberBucket>
       </WrapperLinks>
     </HeaderWrapper >

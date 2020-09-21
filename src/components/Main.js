@@ -25,36 +25,41 @@ export const Main = (props) => {
             <TitleCard>{product.title}</TitleCard>
             <DescText>{product.description}</DescText>
             <Price>{"$" + product.price}</Price>
-            <button onClick={(e) => {
+            < AddproductButton onClick={(e) => {
               dispatch({
                 type: "BUCKET__ITEM",
                 payload: product,
               })
-            }}>add to card</button>
+            }}>add to card</ AddproductButton>
           </WrapperArr>
         })
         }
         {store.modal ? <Modal /> : false}
       </FlexContainer>
-      <Sidebar></Sidebar>
+      {store.sidebar ? <Sidebar /> : false}
     </WrapperMain >
+
   )
 }
 
 const WrapperMain = styled.div`
+display:flex;
+justify-content:center;
 `;
 const FlexContainer = styled.div`
-padding-top:2rem;
 display:flex;
-justify-content:space-between;
+width:1200px;
+justify-content:space-around;
 flex-wrap:wrap;
 `;
-
 const WrapperArr = styled.div`
+margin-top:2rem;
+margin-bottom:2rem;
+padding-bottom:2rem;
+width:25%;
 display:flex;
 flex-direction:column;
 align-items:center;
-flex-wrap:wrap;
 border:1px solid lightcoral;
 `;
 const TitleCard = styled.h2`
@@ -70,4 +75,9 @@ font-size:2rem;
 `;
 const DescText = styled.p`
 font-size:2rem;
+`;
+const AddproductButton = styled.button`
+cursor:pointer;
+text-transform:uppercase;
+font-size:1.5rem;
 `;
