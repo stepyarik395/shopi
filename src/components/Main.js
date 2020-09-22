@@ -10,38 +10,44 @@ export const Main = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <WrapperMain>
-      <FlexContainer>
-        {props.products.filter(product => product.price >= store.minprice && product.price <= store.maxprice).map((product) => {
-          return <WrapperArr key={product._id}>
-            <a href={'#' + product._id} onClick={(e) => {
-              dispatch({
-                type: "OPEN__MODAL",
-                payload: product
-              })
-            }}>
-              <img alt={product._id} src={product.image} />
-            </a>
-            <TitleCard>{product.title}</TitleCard>
-            <DescText>{product.description}</DescText>
-            <Price>{"$" + product.price}</Price>
-            < AddproductButton onClick={(e) => {
-              dispatch({
-                type: "BUCKET__ITEM",
-                payload: product,
-              })
-            }}>add to card</ AddproductButton>
-          </WrapperArr>
-        })
-        }
-        {store.modal ? <Modal /> : false}
-      </FlexContainer>
+    <GlobalContainer>
       {store.sidebar ? <Sidebar /> : false}
-    </WrapperMain >
+      <WrapperMain>
+        <FlexContainer>
+          {props.products.filter(product => product.price >= store.minprice && product.price <= store.maxprice).map((product) => {
+            return <WrapperArr key={product._id}>
+              <a href={'#' + product._id} onClick={(e) => {
+                dispatch({
+                  type: "OPEN__MODAL",
+                  payload: product
+                })
+              }}>
+                <img alt={product._id} src={product.image} />
+              </a>
+              <TitleCard>{product.title}</TitleCard>
+              <DescText>{product.description}</DescText>
+              <Price>{"$" + product.price}</Price>
+              < AddproductButton onClick={(e) => {
+                dispatch({
+                  type: "BUCKET__ITEM",
+                  payload: product,
+                })
+              }}>add to card</ AddproductButton>
+            </WrapperArr>
+          })
+          }
+          {store.modal ? <Modal /> : false}
+        </FlexContainer>
+      </WrapperMain >
+    </GlobalContainer>
+
 
   )
 }
 
+const GlobalContainer = styled.div`
+position:relative;
+`;
 const WrapperMain = styled.div`
 display:flex;
 justify-content:center;

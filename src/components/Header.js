@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { keyframes } from 'styled-components';
 
 export const Header = () => {
   const store = useSelector(state => state);
@@ -59,11 +60,11 @@ export const Header = () => {
           <option>От низкой цены</option>
           <option>От высокой цены</option>
         </SelectBlock>
-        <a href="#" onClick={() => {
+        <BucketButton href="#" onClick={() => {
           dispatch({
             type: "SIDE__TOGLE"
           })
-        }}>BUCKET</a>
+        }}>B</BucketButton>
         <NumberBucket>{store.ordercount}</NumberBucket>
       </WrapperLinks>
     </HeaderWrapper >
@@ -97,3 +98,35 @@ align-items:center;
 const SpanText = styled.span`
 font-size:2rem;
 `;
+const grow = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+const BucketButton = styled.button`
+font-weight:bold;
+align-items:center;
+justify-content:center;
+display:flex;
+cursor:pointer;
+min-width:40px;
+min-height:40px;
+border:none;
+border-radius:50%;
+animation:${grow} 1s infinite;
+&:hover{
+  color:red;
+}
+&:focus{
+outline:none;
+}
+&:active{
+border:2px solid lightgrey;
+outline:none;
+}
+`;
+

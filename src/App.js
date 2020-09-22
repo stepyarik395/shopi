@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
 import data from './data.json'
 
-
 const App = () => {
   const store = useSelector(state => state);
   const [products, setProducts] = useState(data.products)
