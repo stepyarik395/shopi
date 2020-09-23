@@ -64,7 +64,7 @@ export const Header = () => {
           dispatch({
             type: "SIDE__TOGLE"
           })
-        }}>&hearts;</BucketButton> : false}
+        }}>|||</BucketButton> : false}
 
         <NumberBucket>{store.ordercount}</NumberBucket>
       </WrapperLinks>
@@ -72,7 +72,7 @@ export const Header = () => {
   )
 }
 const HeaderWrapper = styled.div`
-background-color:yellow;
+background-color:#e3e3e3;
 `;
 const WrapperLinks = styled.div`
 height:6vh;
@@ -101,13 +101,13 @@ font-size:2rem;
 `;
 const grow = keyframes`
   from {
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
     transform: rotate(0deg);
-    border:1px solid lightcoral;
   }
 
   to {
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
     right:40px;
-    border:4px solid lightcoral;
     transform: rotate(360deg);
   }
 `;
