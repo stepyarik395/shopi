@@ -2,6 +2,7 @@ const INITIAL_STATE = {
   modal: false,
   sidebar: false,
   bucket: false,
+  form: false,
   countbucket: 0,
   select_prod: [],
   bucketitems: [],
@@ -73,6 +74,11 @@ function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         bucket: true
+      };
+    case "TOGGLE__FORM":
+      return {
+        ...state,
+        form: !state.form
       };
     default:
       return state;

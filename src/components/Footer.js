@@ -12,5 +12,5 @@ export const Footer = () => {
 
 const WrapperFooter = styled.div`
 height:3.9vh;
-background-color: #9fb876;
+background-color: #1c1c1c;
 `;
