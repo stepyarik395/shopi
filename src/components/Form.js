@@ -7,7 +7,6 @@ export const Form = () => {
   return (
     <div>
       <FormBlock>
-        <InputForm required type="email" placeholder="enter email" />
         <InputForm required type="text" placeholder="enter name" />
         <InputForm required type="tel" placeholder="enter phone" />
         <SubmitButton>confirm the order</SubmitButton>
