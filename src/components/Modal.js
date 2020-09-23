@@ -55,6 +55,9 @@ export const Modal = () => {
           dispatch({
             type: "MODAL__ADD__BUCKET",
           })
+          dispatch({
+            type: "TOGGLE__BUCKET__BUTTON"
+          })
         }}>Add to Card</ButtonModal>
       </WrapperRighWtBlock>
     </WrapperModal >

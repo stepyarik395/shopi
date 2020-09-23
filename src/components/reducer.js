@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
   modal: false,
   sidebar: false,
+  bucket: false,
   countbucket: 0,
   select_prod: [],
   bucketitems: [],
@@ -8,7 +9,7 @@ const INITIAL_STATE = {
   minprice: 0,
   maxprice: 30,
   totalprice: 0,
-  ordercount: Number(window.localStorage.getItem('count') || 0)
+  ordercount: 0
 }
 
 function reducer(state = INITIAL_STATE, action) {
@@ -67,6 +68,11 @@ function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         sidebar: !state.sidebar
+      };
+    case "TOGGLE__BUCKET__BUTTON":
+      return {
+        ...state,
+        bucket: true
       };
     default:
       return state;

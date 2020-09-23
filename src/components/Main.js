@@ -32,6 +32,9 @@ export const Main = (props) => {
                   type: "BUCKET__ITEM",
                   payload: product,
                 })
+                dispatch({
+                  type: "TOGGLE__BUCKET__BUTTON"
+                })
               }}>add to card</ AddproductButton>
             </WrapperArr>
           })

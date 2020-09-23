@@ -60,11 +60,12 @@ export const Header = () => {
           <option>От низкой цены</option>
           <option>От высокой цены</option>
         </SelectBlock>
-        <BucketButton href="#" onClick={() => {
+        {store.bucket ? <BucketButton href="#" onClick={() => {
           dispatch({
             type: "SIDE__TOGLE"
           })
-        }}>B</BucketButton>
+        }}>&hearts;</BucketButton> : false}
+
         <NumberBucket>{store.ordercount}</NumberBucket>
       </WrapperLinks>
     </HeaderWrapper >
@@ -101,13 +102,18 @@ font-size:2rem;
 const grow = keyframes`
   from {
     transform: rotate(0deg);
+    border:1px solid lightcoral;
   }
 
   to {
+    right:40px;
+    border:4px solid lightcoral;
     transform: rotate(360deg);
   }
 `;
 const BucketButton = styled.button`
+right:-100px;
+position:absolute;
 font-weight:bold;
 align-items:center;
 justify-content:center;
@@ -117,10 +123,8 @@ min-width:40px;
 min-height:40px;
 border:none;
 border-radius:50%;
-animation:${grow} 1s infinite;
-&:hover{
-  color:red;
-}
+animation:${grow} 1s;
+animation-fill-mode: forwards;
 &:focus{
 outline:none;
 }
