@@ -1,8 +1,10 @@
+import data from '../data.json'
 const INITIAL_STATE = {
   modal: false,
   sidebar: false,
   bucket: false,
   form: false,
+  tmp: data.products,
   countbucket: 0,
   select_prod: [],
   bucketitems: [],
@@ -79,6 +81,13 @@ function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         form: !state.form
+      };
+    case "TELO":
+      return {
+        ...state,
+        tmp: state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice })
+        // ...state,
+        // form: !state.form
       };
     default:
       return state;

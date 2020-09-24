@@ -14,7 +14,7 @@ export const Main = (props) => {
       {store.sidebar ? <Sidebar /> : false}
       <WrapperMain>
         <FlexContainer>
-          {props.products.filter(product => product.price >= store.minprice && product.price <= store.maxprice).map((product) => {
+          {store.tmp.map((product) => {
             return <WrapperArr key={product._id}>
               <a href={'#' + product._id} onClick={(e) => {
                 dispatch({
@@ -108,3 +108,5 @@ font-size:1.5rem;
   outline:none;
 }
 `
+
+// props.products.filter(product => product.price >= store.minprice && product.price <= store.maxprice)

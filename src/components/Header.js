@@ -55,6 +55,11 @@ export const Header = () => {
             <option value='100'>100</option>
           </SelectMenu>
         </WrapperSlideinp>
+        <button onClick={() => {
+          dispatch({
+            type: "TELO"
+          })
+        }}>313112</button>
         <SelectBlock>
           <option>Самые новые</option>
           <option>От низкой цены</option>
