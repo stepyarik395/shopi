@@ -25,7 +25,7 @@ const tmp = keyframes`
 }
 `
 const InputForm = styled.input`
-
+font-family: Arial, Helvetica, sans-serif;
 position:relative;
 margin:2rem;
 display:block;
@@ -42,6 +42,7 @@ flex-direction:column;
 align-items:center;
 `;
 const SubmitButton = styled.button`
+font-family: Arial, Helvetica, sans-serif;
 cursor:pointer;
 padding-left:2rem;
 padding-right:2rem;

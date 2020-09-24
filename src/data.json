@@ -3,8 +3,8 @@
     {
       "_id": "dress1",
       "image": "https://via.placeholder.com/300",
-      "title": "Dress1",
-      "description": "about dress 1",
+      "title": "Dress 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "avalibaleSizes": [
         "XL",
         "XXL",
@@ -15,8 +15,8 @@
     {
       "_id": "dress2",
       "image": "https://via.placeholder.com/300",
-      "title": "Dress2",
-      "description": "about dress 2",
+      "title": "Dress 2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "avalibaleSizes": [
         "L",
         "X"
@@ -26,8 +26,8 @@
     {
       "_id": "dress3",
       "image": "https://via.placeholder.com/300",
-      "title": "Dress3",
-      "description": "about dress 3",
+      "title": "Dress 3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "avalibaleSizes": [
         "XL",
         "XXL"
@@ -37,8 +37,8 @@
     {
       "_id": "dress4",
       "image": "https://via.placeholder.com/300",
-      "title": "Dress4",
-      "description": "about dress 4",
+      "title": "Dress 4",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "avalibaleSizes": [
         "XL",
         "L"
@@ -48,8 +48,8 @@
     {
       "_id": "dress5",
       "image": "https://via.placeholder.com/300",
-      "title": "Dress5",
-      "description": "about dress 5",
+      "title": "Dress 5",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "avalibaleSizes": [
         "L",
         "X"
@@ -59,8 +59,8 @@
     {
       "_id": "dress6",
       "image": "https://via.placeholder.com/300",
-      "title": "Dress6",
-      "description": "about dress 6",
+      "title": "Dress 6",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "avalibaleSizes": [
         "XXL",
         "X"
@@ -70,8 +70,8 @@
     {
       "_id": "dress7",
       "image": "https://via.placeholder.com/300",
-      "title": "Dress7",
-      "description": "about dress 7",
+      "title": "Dress 7",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "avalibaleSizes": [
         "XXL",
         "X",
@@ -82,8 +82,8 @@
     {
       "_id": "dress8",
       "image": "https://via.placeholder.com/300",
-      "title": "Dress8",
-      "description": "about dress 8",
+      "title": "Dress 8",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "avalibaleSizes": [
         "XXL",
         "X",
@@ -94,8 +94,8 @@
     {
       "_id": "dress9",
       "image": "https://via.placeholder.com/300",
-      "title": "Dress9",
-      "description": "about dress 9",
+      "title": "Dress 9",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "avalibaleSizes": [
         "XXL",
         "X",

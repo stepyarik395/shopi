@@ -72,21 +72,39 @@ align-items:center;
 border:1px solid lightcoral;
 `;
 const TitleCard = styled.h2`
+font-family: Arial, Helvetica, sans-serif;
 text-transform:uppercase;
 text-align:center;
 padding-top:1.2rem;
 `;
 const Price = styled.span`
+padding-top:1.5rem;
+font-family: Arial, Helvetica, sans-serif;
 text-align:center;
 display: block;
 font-weight:bold;
 font-size:2rem;
 `;
 const DescText = styled.p`
+text-align:center;
+padding-top:2rem;
+font-family: Arial, Helvetica, sans-serif;
 font-size:2rem;
 `;
 const AddproductButton = styled.button`
+font-weight:bold;
+border-radius:10px;
+border:2px solid #858585;
+padding:1rem 1rem 1rem 1rem;
+margin-top:1.5rem;
+font-family: Arial, Helvetica, sans-serif;
 cursor:pointer;
 text-transform:uppercase;
 font-size:1.5rem;
-`;
+&:active{
+  outline:none;
+}
+&:focus{
+  outline:none;
+}
+`

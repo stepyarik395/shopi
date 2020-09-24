@@ -15,7 +15,7 @@ export const Header = () => {
         <Link href=''>Admin</Link>
         <WrapperSlideinp>
           <SpanText>цена от</SpanText>
-          <select value={store.minprice} onChange={(e) => {
+          <SelectMenu value={store.minprice} onChange={(e) => {
             dispatch({
               type: "MIN__COUNT",
               payload: e.target.value
@@ -32,11 +32,11 @@ export const Header = () => {
             <option value='80'>80</option>
             <option value='90'>90</option>
             <option value='100'>100</option>
-          </select>
+          </SelectMenu>
         </WrapperSlideinp>
         <WrapperSlideinp>
           <SpanText>цена до</SpanText>
-          <select value={store.maxprice} onChange={(e) => {
+          <SelectMenu value={store.maxprice} onChange={(e) => {
             dispatch({
               type: "MAX__COUNT",
               payload: e.target.value
@@ -53,7 +53,7 @@ export const Header = () => {
             <option value='80'>80</option>
             <option value='90'>90</option>
             <option value='100'>100</option>
-          </select>
+          </SelectMenu>
         </WrapperSlideinp>
         <SelectBlock>
           <option>Самые новые</option>
@@ -71,6 +71,10 @@ export const Header = () => {
     </HeaderWrapper >
   )
 }
+
+const SelectMenu = styled.select`
+cursor:pointer;
+`;
 const HeaderWrapper = styled.div`
 background-color:#e3e3e3;
 `;
@@ -81,6 +85,7 @@ justify-content:space-around;
 align-items:center;
 `
 const Link = styled.a`
+font-family: Arial, Helvetica, sans-serif;
 text-transform:uppercase;
 font-size: 2rem;
 display:block;
@@ -97,6 +102,9 @@ display:flex;
 align-items:center;
 `;
 const SpanText = styled.span`
+display:block;
+padding-right:15px;
+font-family: Arial, Helvetica, sans-serif;
 font-size:2rem;
 `;
 const grow = keyframes`

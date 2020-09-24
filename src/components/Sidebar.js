@@ -68,17 +68,21 @@ width:20%;
 background-color:#525252;
 `
 const TitleProduct = styled.h2`
+font-family: Arial, Helvetica, sans-serif;
 font-size:2rem;
 `;
 const PriceProducts = styled.p`
+font-family: Arial, Helvetica, sans-serif;
 font-weight:bold;
 font-size:2rem;
 `;
 const TotalText = styled.span`
+font-family: Arial, Helvetica, sans-serif;
 display:block;
 font-size:2rem;
 `;
 const ButtonSide = styled.button`
+font-family: Arial, Helvetica, sans-serif;
 animation:${pulse} 1s infinite;
 color:#fff;
 width:40px;
