@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   sidebar: false,
   bucket: false,
   form: false,
-  tmp: data.products,
+  mainproducts: data.products,
   countbucket: 0,
   select_prod: [],
   bucketitems: [],
@@ -15,7 +15,6 @@ const INITIAL_STATE = {
   ordercount: 0
 }
 
-
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case "OPEN__MODAL":
@@ -24,14 +23,10 @@ function reducer(state = INITIAL_STATE, action) {
         modal: !state.modal,
         select_prod: action.payload,
       };
-    case "CLOSE__MODAL":
-      return {
-        ...state,
-        modal: !state.modal
-      }
     case "BUCKET__ITEM":
       return {
         ...state,
+        bucket: true,
         totalprice: state.totalprice += action.payload.price,
         ordercount: state.ordercount + 1,
         bucketitems: state.bucketitems.concat(action.payload)
@@ -39,6 +34,8 @@ function reducer(state = INITIAL_STATE, action) {
     case "MODAL__ADD__BUCKET":
       return {
         ...state,
+        bucket: true,
+        modal: !state.modal,
         totalprice: state.totalprice += state.select_prod.price,
         ordercount: state.ordercount + 1,
         bucketitems: state.bucketitems.concat(state.select_prod)
@@ -73,28 +70,10 @@ function reducer(state = INITIAL_STATE, action) {
         ...state,
         sidebar: !state.sidebar
       };
-    case "TOGGLE__BUCKET__BUTTON":
-      return {
-        ...state,
-        bucket: true
-      };
     case "TOGGLE__FORM":
       return {
         ...state,
         form: !state.form
-      };
-    case "TELO":
-      // arr.concat(state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice }))
-      return {
-        ...state,
-        // tmp: state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice }),
-        // tmp: state.tmp.concat(state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice }))
-        // tmp: state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice })
-        // tmp: arr
-        // tmp: state.tmp.filter(product => { return product.price < state.maxprice })
-        // tmp: state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice })
-        // .....state,
-        // form: !state.form
       };
     default:
       return state;

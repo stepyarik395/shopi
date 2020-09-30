@@ -50,13 +50,7 @@ export const Modal = () => {
         </ListSizes>
         <ButtonModal onClick={() => {
           dispatch({
-            type: "CLOSE__MODAL"
-          })
-          dispatch({
-            type: "MODAL__ADD__BUCKET",
-          })
-          dispatch({
-            type: "TOGGLE__BUCKET__BUTTON"
+            type: "MODAL__ADD__BUCKET"
           })
         }}>Add to Card</ButtonModal>
       </WrapperRighWtBlock>

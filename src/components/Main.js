@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Modal } from "./Modal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Sidebar } from '../components/Sidebar'
 
-export const Main = (props) => {
+export const Main = () => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
 
@@ -14,7 +14,7 @@ export const Main = (props) => {
       {store.sidebar ? <Sidebar /> : false}
       <WrapperMain>
         <FlexContainer>
-          {store.tmp.map((product) => {
+          {store.mainproducts.filter(product => product.price >= store.minprice && product.price <= store.maxprice).map((product) => {
             return <WrapperArr key={product._id}>
               <a href={'#' + product._id} onClick={(e) => {
                 dispatch({
@@ -27,13 +27,10 @@ export const Main = (props) => {
               <TitleCard>{product.title}</TitleCard>
               <DescText>{product.description}</DescText>
               <Price>{"$" + product.price}</Price>
-              < AddproductButton onClick={(e) => {
+              <AddproductButton onClick={(e) => {
                 dispatch({
                   type: "BUCKET__ITEM",
                   payload: product,
-                })
-                dispatch({
-                  type: "TOGGLE__BUCKET__BUTTON"
                 })
               }}>add to card</ AddproductButton>
             </WrapperArr>
@@ -108,5 +105,3 @@ font-size:1.5rem;
   outline:none;
 }
 `
-
-// props.products.filter(product => product.price >= store.minprice && product.price <= store.maxprice)
