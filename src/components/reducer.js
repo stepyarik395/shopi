@@ -15,6 +15,7 @@ const INITIAL_STATE = {
   ordercount: 0
 }
 
+
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case "OPEN__MODAL":
@@ -83,10 +84,14 @@ function reducer(state = INITIAL_STATE, action) {
         form: !state.form
       };
     case "TELO":
+      let arr = []
+      // arr.concat(state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice }))
       return {
         ...state,
-        tmp: state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice })
-        // ...state,
+        // tmp: arr
+        // tmp: state.tmp.filter(product => { return product.price < state.maxprice })
+        // tmp: state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice })
+        // .....state,
         // form: !state.form
       };
     default:
