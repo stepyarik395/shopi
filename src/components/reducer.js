@@ -84,10 +84,12 @@ function reducer(state = INITIAL_STATE, action) {
         form: !state.form
       };
     case "TELO":
-      let arr = []
       // arr.concat(state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice }))
       return {
         ...state,
+        // tmp: state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice }),
+        // tmp: state.tmp.concat(state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice }))
+        // tmp: state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice })
         // tmp: arr
         // tmp: state.tmp.filter(product => { return product.price < state.maxprice })
         // tmp: state.tmp.filter(product => { return product.price >= state.minprice && product.price <= state.maxprice })
