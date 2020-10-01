@@ -1,15 +1,35 @@
 import React from 'react';
-import { Header } from './components/Header'
-import { Main } from './components/Main'
-import { Footer } from './components/Footer'
+import { MainPage } from './components/MainPage';
+import { Signin } from './components/Signin';
+import { Signup } from './components/Signup';
+import { Admin } from './components/Admin';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
 
 
 const App = () => {
   return (
     <div className="App">
-      <Header />
-      <Main />
-      <Footer />
+      <Switch>
+        <Route path='/'>
+          <MainPage />
+        </Route>
+        <Route path='/signin'>
+          <Signin />
+        </Route>
+        <Route path="/signup">
+          <Signup />
+        </Route>
+        <Route path="/admin">
+          <Admin />
+        </Route>
+      </Switch>
     </div>
   );
 }

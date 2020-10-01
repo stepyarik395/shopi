@@ -1,4 +1,5 @@
 import data from '../data.json'
+
 const INITIAL_STATE = {
   modal: false,
   sidebar: false,
@@ -75,6 +76,11 @@ function reducer(state = INITIAL_STATE, action) {
         ...state,
         form: !state.form
       };
+    case "CLOSE__MODAL":
+      return {
+        ...state,
+        modal: !state.modal
+      }
     default:
       return state;
   }
