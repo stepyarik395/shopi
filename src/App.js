@@ -10,10 +10,18 @@ const App = () => {
   return (
     <div className="App">
       <Router>
-        <Route path='/' component={MainPage}></Route>
-        <Route path='/signin' component={Signin}></Route>
-        <Route path="/signup" component={Signup}></Route>
-        <Route path="/admin" component={Admin}></Route>
+        <Route exact path='/'>
+          <MainPage />
+        </Route>
+        <Route path='/signin'>
+          <Signin />
+        </Route>
+        <Route path="/signup">
+          <Signup />
+        </Route>
+        <Route path="/admin">
+          <Admin />
+        </Route>
       </Router>
     </div>
   );

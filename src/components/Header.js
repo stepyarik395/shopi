@@ -14,6 +14,8 @@ export const Header = () => {
       <WrapperLinks>
         <Link to='/'>logo</Link>
         <Link to='/admin'>Admin</Link>
+        <Link to="/signin">Sing in</Link>
+        <Link to="/signup">Sing up</Link>
         <WrapperSlideinp>
           <SpanText>цена от</SpanText>
           <SelectMenu value={store.minprice} onChange={(e) => {

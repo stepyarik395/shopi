@@ -16,14 +16,12 @@ export const Main = () => {
         <FlexContainer>
           {store.mainproducts.filter(product => product.price >= store.minprice && product.price <= store.maxprice).map((product) => {
             return <WrapperArr key={product._id}>
-              <a href={'#' + product._id} onClick={(e) => {
+              <ImageProduct onClick={(e) => {
                 dispatch({
                   type: "OPEN__MODAL",
                   payload: product
                 })
-              }}>
-                <img alt={product._id} src={product.image} />
-              </a>
+              }} alt={product._id} src={product.image} />
               <TitleCard>{product.title}</TitleCard>
               <DescText>{product.description}</DescText>
               <Price>{"$" + product.price}</Price>
@@ -44,6 +42,10 @@ export const Main = () => {
 
   )
 }
+const ImageProduct = styled.img`
+width:100%;
+cursor:pointer;
+`;
 
 const GlobalContainer = styled.div`
 position:relative;
