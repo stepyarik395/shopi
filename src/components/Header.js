@@ -12,10 +12,10 @@ export const Header = () => {
   return (
     <HeaderWrapper>
       <WrapperLinks>
-        <Link to='/'>logo</Link>
-        <Link to='/admin'>Admin</Link>
-        <Link to="/signin">Sing in</Link>
-        <Link to="/signup">Sing up</Link>
+        <StyledLink to='/'>logo</StyledLink>
+        <StyledLink to='/admin'>Admin</StyledLink>
+        <StyledLink to="/signin">Sing in</StyledLink>
+        <StyledLink to="/signup">Sing up</StyledLink>
         <WrapperSlideinp>
           <SpanText>цена от</SpanText>
           <SelectMenu value={store.minprice} onChange={(e) => {
@@ -87,14 +87,14 @@ display:flex;
 justify-content:space-around;
 align-items:center;
 `
-// const Link = styled.a`
-// font-family: Arial, Helvetica, sans-serif;
-// text-transform:uppercase;
-// font-size: 2rem;
-// display:block;
-// color:black;
-// text-decoration:none;
-// `
+const StyledLink = styled(Link)`
+font-family: Arial, Helvetica, sans-serif;
+text-transform:uppercase;
+font-size: 2rem;
+display:block;
+color:black;
+text-decoration:none;
+`;
 const NumberBucket = styled.span`
 font-size:2rem;
 `;
