@@ -8,8 +8,7 @@ import { useDispatch } from "react-redux";
 export const Form = () => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
-  console.log(store.username);
-  console.log(store.password);
+
   return (
     <div>
       <FormBlock>
@@ -32,6 +31,7 @@ export const Form = () => {
             })
           }} />
         <SubmitButton onClick={() => {
+
         }}>confirm the order</SubmitButton>
       </FormBlock>
     </div>

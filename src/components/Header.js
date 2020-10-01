@@ -68,7 +68,6 @@ export const Header = () => {
             type: "SIDE__TOGLE"
           })
         }}>|||</BucketButton> : false}
-
         <NumberBucket>{store.ordercount}</NumberBucket>
       </WrapperLinks>
     </HeaderWrapper >

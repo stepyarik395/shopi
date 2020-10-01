@@ -82,6 +82,11 @@ function reducer(state = INITIAL_STATE, action) {
         ...state,
         password: action.payload
       };
+    case "REFRESH__STORE":
+      return {
+        ...state,
+        sidebar: !state.sidebar,
+      };
     default:
       return state;
   }
