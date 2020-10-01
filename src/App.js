@@ -3,33 +3,18 @@ import { MainPage } from './components/MainPage';
 import { Signin } from './components/Signin';
 import { Signup } from './components/Signup';
 import { Admin } from './components/Admin';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 
 
 const App = () => {
   return (
     <div className="App">
-      <Switch>
-        <Route path='/'>
-          <MainPage />
-        </Route>
-        <Route path='/signin'>
-          <Signin />
-        </Route>
-        <Route path="/signup">
-          <Signup />
-        </Route>
-        <Route path="/admin">
-          <Admin />
-        </Route>
-      </Switch>
+      <Router>
+        <Route path='/' component={MainPage}></Route>
+        <Route path='/signin' component={Signin}></Route>
+        <Route path="/signup" component={Signup}></Route>
+        <Route path="/admin" component={Admin}></Route>
+      </Router>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { keyframes } from 'styled-components';
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const store = useSelector(state => state);
@@ -11,8 +12,8 @@ export const Header = () => {
   return (
     <HeaderWrapper>
       <WrapperLinks>
-        <Link href='#'>logo</Link>
-        <Link href=''>Admin</Link>
+        <Link to='/'>logo</Link>
+        <Link to='/admin'>Admin</Link>
         <WrapperSlideinp>
           <SpanText>цена от</SpanText>
           <SelectMenu value={store.minprice} onChange={(e) => {
@@ -84,14 +85,14 @@ display:flex;
 justify-content:space-around;
 align-items:center;
 `
-const Link = styled.a`
-font-family: Arial, Helvetica, sans-serif;
-text-transform:uppercase;
-font-size: 2rem;
-display:block;
-color:black;
-text-decoration:none;
-`
+// const Link = styled.a`
+// font-family: Arial, Helvetica, sans-serif;
+// text-transform:uppercase;
+// font-size: 2rem;
+// display:block;
+// color:black;
+// text-decoration:none;
+// `
 const NumberBucket = styled.span`
 font-size:2rem;
 `;
