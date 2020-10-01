@@ -9,11 +9,12 @@ const INITIAL_STATE = {
   countbucket: 0,
   select_prod: [],
   bucketitems: [],
-  arrsizes: [],
   minprice: 0,
   maxprice: 30,
   totalprice: 0,
-  ordercount: 0
+  ordercount: 0,
+  username: '',
+  useremail: ''
 }
 
 function reducer(state = INITIAL_STATE, action) {
@@ -40,16 +41,6 @@ function reducer(state = INITIAL_STATE, action) {
         totalprice: state.totalprice += state.select_prod.price,
         ordercount: state.ordercount + 1,
         bucketitems: state.bucketitems.concat(state.select_prod)
-      };
-    case "ADD__SIZE":
-      return {
-        ...state,
-        arrsizes: state.arrsizes.concat(action.payload)
-      };
-    case "DELETE__SIZE":
-      return {
-        ...state,
-        arrsizes: action.payload
       };
     case "COUNT__ORDER":
       return {
@@ -80,7 +71,17 @@ function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         modal: !state.modal
-      }
+      };
+    case "ADD__USER__NAME":
+      return {
+        ...state,
+        username: action.payload
+      };
+    case "ADD__USER__PASSWORD":
+      return {
+        ...state,
+        password: action.payload
+      };
     default:
       return state;
   }

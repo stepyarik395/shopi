@@ -4,7 +4,7 @@ import { Signin } from './components/Signin';
 import { Signup } from './components/Signup';
 import { Admin } from './components/Admin';
 import { Header } from './components/Header'
-import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+import { BrowserRouter as Router, Route, } from "react-router-dom";
 
 
 const App = () => {

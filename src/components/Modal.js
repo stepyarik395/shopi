@@ -26,24 +26,9 @@ export const Modal = () => {
           {store.select_prod.avalibaleSizes.map((item, index) => {
             return (
               <li key={item}>
-                <ChekBox type="checkbox"
-                  name={item}
-                  onChange={(e) => {
-                    if (e.target.checked) {
-                      dispatch({
-                        type: "ADD__SIZE",
-                        payload: e.target.name
-                      })
-                    } else {
-                      dispatch({
-                        type: "DELETE__SIZE",
-                        payload: store.arrsizes.filter((item) => { return item !== e.target.name })
-                      })
-                    }
-                  }}
-                >
-                </ChekBox>
-                {item}
+                <Size>
+                  {item}
+                </Size>
               </li>
             )
           })}
@@ -110,6 +95,7 @@ li{
 }
 `
 const ButtonModal = styled.button`
+font-family: Arial, Helvetica, sans-serif;
 cursor:pointer;
 background-color:lightcoral;
 color:#fff;
@@ -121,7 +107,11 @@ padding-bottom:1.2rem;
 margin-top:2rem;
 border:none;
 `;
-const ChekBox = styled.input`
+const Size = styled.span`
+  text-shadow: 1px 1px 2px black, 0 0 1em white;
+font-family: Arial, Helvetica, sans-serif;
+font-size:2rem;
+display:block;
 margin-right:0.5rem;
 margin-bottom:0.5rem;
 `;
