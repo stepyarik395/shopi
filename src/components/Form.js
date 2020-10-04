@@ -32,9 +32,11 @@ export const Form = () => {
         }} />
       <SubmitButton onClick={() => {
         dispatch({
-          type: "REFRESH__STORE"
+          type: "REFRESH__STORE",
+          payload: store.bucketitems.map((item) => {
+            return item.title
+          })
         })
-
       }}>confirm the order</SubmitButton>
     </WrapperForm>
   )

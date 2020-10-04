@@ -9,8 +9,8 @@ export const Main = () => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
 
-  console.log(store.adimarr)
-
+  // console.log(store.bucketitems)
+  console.log(store.adminarr);
   return (
     <GlobalContainer>
       {store.sidebar ? <Sidebar /> : false}
@@ -40,8 +40,6 @@ export const Main = () => {
         </FlexContainer>
       </WrapperMain >
     </GlobalContainer>
-
-
   )
 }
 const ImageProduct = styled.img`

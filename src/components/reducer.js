@@ -15,7 +15,7 @@ const INITIAL_STATE = {
   ordercount: 0,
   username: '',
   usertel: '',
-  adimarr: []
+  adminarr: []
 }
 
 
@@ -87,16 +87,13 @@ function reducer(state = INITIAL_STATE, action) {
     case "REFRESH__STORE":
       return {
         ...state,
-        adimarr: state.adimarr.concat(state.bucketitems).map((item) => {
-          return item.title
-        }),
+        adminarr: action.payload.concat(state.totalprice, state.username, state.usertel),
         sidebar: !state.sidebar,
         username: '',
         usertel: '',
         bucketitems: [],
         totalprice: 0,
         ordercount: 0,
-
       };
     default:
       return state;
