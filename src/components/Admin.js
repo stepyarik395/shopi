@@ -11,7 +11,7 @@ export const Admin = () => {
   return (
     <Wrapper>
       {store.adminarr.map((item, i) => {
-        return <WrapperItem key={i}>{item}</WrapperItem>
+        return <WrapperItem key={i}>{item.title}</WrapperItem>
       })}
     </Wrapper>
   )
