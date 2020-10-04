@@ -58,22 +58,51 @@ export const Header = () => {
             <option value='100'>100</option>
           </SelectMenu>
         </WrapperSlideinp>
-        <SelectBlock>
-          <option>Самые новые</option>
-          <option>От низкой цены</option>
-          <option>От высокой цены</option>
-        </SelectBlock>
-        {store.bucket ? <BucketButton href="#" onClick={() => {
-          dispatch({
-            type: "SIDE__TOGLE"
-          })
-        }}>|||</BucketButton> : false}
-        <NumberBucket>{store.ordercount}</NumberBucket>
+        <WrapperButtonCount>
+          {store.bucket ? <WrapperButtonCount>
+            <BucketButton
+              onClick={() => {
+                dispatch({
+                  type: "SIDE__TOGLE"
+                })
+              }}
+            >
+              |||
+            </BucketButton>
+            <NumberBucket>
+              {store.ordercount}
+            </NumberBucket>
+          </WrapperButtonCount> : false}
+        </WrapperButtonCount>
       </WrapperLinks>
     </HeaderWrapper >
   )
 }
 
+const grow = keyframes`
+  from {
+  }
+
+  to {
+    right:40px;
+  }
+`;
+const rotate = keyframes`
+from{
+  transform:rotate(0deg);
+}
+to{transform:rotate(360deg)
+
+}
+`;
+const WrapperButtonCount = styled.div`
+display:flex;
+align-items:center;
+animation:${grow} 1s;
+animation-fill-mode: forwards;
+right:-100px;
+position:absolute;
+`;
 const SelectMenu = styled.select`
 cursor:pointer;
 `;
@@ -83,10 +112,10 @@ background-color:#e3e3e3;
 const WrapperLinks = styled.div`
 height:6vh;
 display:flex;
-justify-content:space-around;
 align-items:center;
 `
 const StyledLink = styled(Link)`
+margin-left:2rem;
 font-family: Arial, Helvetica, sans-serif;
 text-transform:uppercase;
 font-size: 2rem;
@@ -95,11 +124,14 @@ color:black;
 text-decoration:none;
 `;
 const NumberBucket = styled.span`
+display:block;
+margin-left:15px;
 font-size:2rem;
 `;
 const SelectBlock = styled.select`
 `;
 const WrapperSlideinp = styled.div`
+margin-left:2rem;
 display:flex;
 align-items:center;
 `;
@@ -109,32 +141,19 @@ padding-right:15px;
 font-family: Arial, Helvetica, sans-serif;
 font-size:2rem;
 `;
-const grow = keyframes`
-  from {
-    box-shadow: 0 0 3px rgba(0,0,0,0.1);
-    transform: rotate(0deg);
-  }
-
-  to {
-    box-shadow: 0 0 5px rgba(0,0,0,0.4);
-    right:40px;
-    transform: rotate(360deg);
-  }
-`;
 const BucketButton = styled.button`
-right:-100px;
-position:absolute;
+box-shadow: 0 0 3px rgba(0,0,0,0.1);
 font-weight:bold;
 align-items:center;
 justify-content:center;
+animation:${rotate} 1s;
+animation-fill-mode:forwards;
 display:flex;
 cursor:pointer;
 min-width:40px;
 min-height:40px;
 border:none;
 border-radius:50%;
-animation:${grow} 1s;
-animation-fill-mode: forwards;
 &:focus{
 outline:none;
 }
