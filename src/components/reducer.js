@@ -14,8 +14,10 @@ const INITIAL_STATE = {
   totalprice: 0,
   ordercount: 0,
   username: '',
-  useremail: ''
+  usertel: '',
+  adimarr: []
 }
+
 
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -77,15 +79,24 @@ function reducer(state = INITIAL_STATE, action) {
         ...state,
         username: action.payload
       };
-    case "ADD__USER__PASSWORD":
+    case "ADD__USER__PHONE":
       return {
         ...state,
-        password: action.payload
+        usertel: action.payload
       };
     case "REFRESH__STORE":
       return {
         ...state,
+        adimarr: state.adimarr.concat(state.bucketitems).map((item) => {
+          return item.title
+        }),
         sidebar: !state.sidebar,
+        username: '',
+        usertel: '',
+        bucketitems: [],
+        totalprice: 0,
+        ordercount: 0,
+
       };
     default:
       return state;

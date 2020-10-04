@@ -10,33 +10,40 @@ export const Form = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <FormBlock>
-        <InputForm
-          required type="text"
-          onChange={(e) => {
-            dispatch({
-              type: "ADD__USER__NAME",
-              payload: e.target.value
-            })
-          }} placeholder="enter name" />
-        <InputForm
-          required
-          type="tel"
-          placeholder="enter phone"
-          onChange={(e) => {
-            dispatch({
-              type: "ADD__USER__PASSWORD",
-              payload: e.target.value
-            })
-          }} />
-        <SubmitButton onClick={() => {
+    <WrapperForm>
+      <InputForm
+        required
+        type="text"
+        onChange={(e) => {
+          dispatch({
+            type: "ADD__USER__NAME",
+            payload: e.target.value
+          })
+        }} placeholder="enter name" />
+      <InputForm
+        required
+        type="tel"
+        placeholder="enter phone"
+        onChange={(e) => {
+          dispatch({
+            type: "ADD__USER__PHONE",
+            payload: e.target.value
+          })
+        }} />
+      <SubmitButton onClick={() => {
+        dispatch({
+          type: "REFRESH__STORE"
+        })
 
-        }}>confirm the order</SubmitButton>
-      </FormBlock>
-    </div>
+      }}>confirm the order</SubmitButton>
+    </WrapperForm>
   )
 }
+const WrapperForm = styled.div`
+display:flex;
+flex-direction:column;
+align-items:center;
+`;
 const tmp = keyframes`
 0%{
   opacity:0;

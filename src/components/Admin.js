@@ -9,9 +9,7 @@ export const Admin = () => {
   const dispatch = useDispatch();
 
   return (
-
     <Wrapper>
-      <h2>Products</h2>
     </Wrapper>
   )
 }
@@ -19,4 +17,6 @@ export const Admin = () => {
 const Wrapper = styled.div`
 `;
 const WrapperItem = styled.div`
+`;
+const TotalPrice = styled.span`
 `;

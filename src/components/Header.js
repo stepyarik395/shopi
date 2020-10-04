@@ -16,48 +16,51 @@ export const Header = () => {
         <StyledLink to='/admin'>Admin</StyledLink>
         <StyledLink to="/signin">Sing in</StyledLink>
         <StyledLink to="/signup">Sing up</StyledLink>
-        <WrapperSlideinp>
-          <SpanText>цена от</SpanText>
-          <SelectMenu value={store.minprice} onChange={(e) => {
-            dispatch({
-              type: "MIN__COUNT",
-              payload: e.target.value
-            })
-          }}>
-            <option value='0'>0</option>
-            <option value='10'>10</option>
-            <option value='20'>20</option>
-            <option value='30'>30</option>
-            <option value='40'>40</option>
-            <option value='50'>50</option>
-            <option value='60'>60</option>
-            <option value='70'>70</option>
-            <option value='80'>80</option>
-            <option value='90'>90</option>
-            <option value='100'>100</option>
-          </SelectMenu>
-        </WrapperSlideinp>
-        <WrapperSlideinp>
-          <SpanText>цена до</SpanText>
-          <SelectMenu value={store.maxprice} onChange={(e) => {
-            dispatch({
-              type: "MAX__COUNT",
-              payload: e.target.value
-            })
-          }}>
-            <option value='0'>0</option>
-            <option value='10'>10</option>
-            <option value='20'>20</option>
-            <option value='30'>30</option>
-            <option value='40'>40</option>
-            <option value='50'>50</option>
-            <option value='60'>60</option>
-            <option value='70'>70</option>
-            <option value='80'>80</option>
-            <option value='90'>90</option>
-            <option value='100'>100</option>
-          </SelectMenu>
-        </WrapperSlideinp>
+        <SortBlock>
+          <WrapperSlideinp>
+            <SpanText>цена от</SpanText>
+            <SelectMenu value={store.minprice} onChange={(e) => {
+              dispatch({
+                type: "MIN__COUNT",
+                payload: e.target.value
+              })
+            }}>
+              <option value='0'>0</option>
+              <option value='10'>10</option>
+              <option value='20'>20</option>
+              <option value='30'>30</option>
+              <option value='40'>40</option>
+              <option value='50'>50</option>
+              <option value='60'>60</option>
+              <option value='70'>70</option>
+              <option value='80'>80</option>
+              <option value='90'>90</option>
+              <option value='100'>100</option>
+            </SelectMenu>
+          </WrapperSlideinp>
+          <WrapperSlideinp>
+            <SpanText>цена до</SpanText>
+            <SelectMenu value={store.maxprice} onChange={(e) => {
+              dispatch({
+                type: "MAX__COUNT",
+                payload: e.target.value
+              })
+            }}>
+              <option value='0'>0</option>
+              <option value='10'>10</option>
+              <option value='20'>20</option>
+              <option value='30'>30</option>
+              <option value='40'>40</option>
+              <option value='50'>50</option>
+              <option value='60'>60</option>
+              <option value='70'>70</option>
+              <option value='80'>80</option>
+              <option value='90'>90</option>
+              <option value='100'>100</option>
+            </SelectMenu>
+          </WrapperSlideinp>
+
+        </SortBlock>
         <WrapperButtonCount>
           {store.bucket ? <WrapperButtonCount>
             <BucketButton
@@ -95,6 +98,11 @@ to{transform:rotate(360deg)
 
 }
 `;
+const SortBlock = styled.div`
+display:flex;
+align-items:center;
+margin-left:7rem;
+`;
 const WrapperButtonCount = styled.div`
 display:flex;
 align-items:center;
@@ -127,8 +135,6 @@ const NumberBucket = styled.span`
 display:block;
 margin-left:15px;
 font-size:2rem;
-`;
-const SelectBlock = styled.select`
 `;
 const WrapperSlideinp = styled.div`
 margin-left:2rem;

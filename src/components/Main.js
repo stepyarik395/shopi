@@ -9,6 +9,8 @@ export const Main = () => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
 
+  console.log(store.adimarr)
+
   return (
     <GlobalContainer>
       {store.sidebar ? <Sidebar /> : false}
