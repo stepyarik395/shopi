@@ -20,6 +20,8 @@ export const Admin = () => {
 const Wrapper = styled.div`
 `;
 const WrapperItem = styled.div`
+display:flex;
+font-size:2rem;
 `;
 const TotalPrice = styled.span`
 `;
