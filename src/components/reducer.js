@@ -87,13 +87,13 @@ function reducer(state = INITIAL_STATE, action) {
     case "REFRESH__STORE":
       return {
         ...state,
-        adminarr: action.payload.concat(state.totalprice, state.username, state.usertel),
-        sidebar: !state.sidebar,
+        adminarr: state.adminarr.concat(action.payload.concat(state.totalprice, state.username, state.usertel)),
         username: '',
         usertel: '',
         bucketitems: [],
         totalprice: 0,
         ordercount: 0,
+        sidebar: !state.sidebar,
       };
     default:
       return state;

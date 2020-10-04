@@ -9,7 +9,6 @@ export const Main = () => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
 
-  // console.log(store.bucketitems)
   console.log(store.adminarr);
   return (
     <GlobalContainer>
