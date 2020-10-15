@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 export const Form = () => {
   const store = useSelector(state => state);
   const dispatch = useDispatch();
+  console.log(store.adminarr)
 
   return (
     <WrapperForm>

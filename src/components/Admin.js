@@ -10,17 +10,20 @@ export const Admin = () => {
 
   return (
     <Wrapper>
+      <ul>
       {store.adminarr.map((item, i) => {
-        return <WrapperItem key={i}>{item.title}</WrapperItem>
+        return <WrapperItem key={i}>{item}</WrapperItem>
       })}
+    </ul>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
+display:flex;
+justify-content:center;
 `;
 const WrapperItem = styled.div`
-display:flex;
 font-size:2rem;
 `;
 const TotalPrice = styled.span`
