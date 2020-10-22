@@ -67,7 +67,7 @@ width:25%;
 display:flex;
 flex-direction:column;
 align-items:center;
-border:1px solid lightcoral;
+border:1px solid #cfcfcf;
 `;
 const TitleCard = styled.h2`
 font-family: Arial, Helvetica, sans-serif;

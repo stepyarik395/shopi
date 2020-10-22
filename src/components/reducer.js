@@ -87,7 +87,7 @@ function reducer(state = INITIAL_STATE, action) {
     case "REFRESH__STORE":
       return {
         ...state,
-        adminarr: state.adminarr.concat(action.payload + ',' + 'telephone:' + state.usertel + ',' + 'name' + ' '+ state.username),
+        adminarr: state.adminarr.concat(`${action.payload} telephone: ${state.usertel} name: ${state.username}`),
         username:'',
         usertel: '',
         bucketitems: [],

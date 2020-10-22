@@ -64,7 +64,7 @@ color:#fff;
 right:100px;
 height:93vh;
 position:absolute;
-width:20%;
+width:400px;
 background-color:#525252;
 `
 const TitleProduct = styled.h2`
